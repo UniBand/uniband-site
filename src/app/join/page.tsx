@@ -30,7 +30,7 @@ const BodyContent = styled.div`
 
 const FormBlock = styled.div`
   height: 80vh;
-  margin-top: 2rem;
+  margin-top: 1rem;
   position: relative;
   width: 80%;
 `;
@@ -66,7 +66,7 @@ export default function Join() {
           <b>University of Auckland</b> and <b>AUT</b>. No audition required!
         </p>
         <p>
-          As we are a concert band, we are always looking for musicians playing{" "}
+          As a concert band, we are always looking for musicians playing{" "}
           <b>woodwind</b>, <b>brass</b>, and <b>percussion</b> instruments.
         </p>
         <p>
