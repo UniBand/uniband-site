@@ -1,6 +1,6 @@
 "use client";
 
-import Title from "@/components/atomic/Title";
+import { Title } from "@/components/atomic";
 
 export default function Videos() {
   return (

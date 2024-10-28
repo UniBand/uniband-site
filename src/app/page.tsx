@@ -1,6 +1,6 @@
 "use client";
 
-import Title from "@/components/atomic/Title";
+import { Title } from "@/components/atomic";
 import { EmailOutlined, YouTube } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";

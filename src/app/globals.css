@@ -1,6 +1,7 @@
 :root {
   --background: #dbdbdb;
   --foreground: #171717;
+  --hyperlink: #00457d;
 
   --body-margins: 10rem;
 }
@@ -12,6 +13,8 @@ body {
 
 body {
   color: var(--foreground);
+  display: flex;
+  flex-direction: column;
   font-family: "Mona Sans", Arial, Helvetica, sans-serif;
   min-height: 100vh;
   position: relative;
@@ -39,6 +42,11 @@ main {
 
 button {
   font-family: "Mona Sans", Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
 @layer fonts {
