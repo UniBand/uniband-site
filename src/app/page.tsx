@@ -1,6 +1,5 @@
 "use client";
 
-import { Footer, Header } from "@/components/header-footer";
 import { EmailOutlined, YouTube } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -113,7 +112,6 @@ const Gallery = styled.div`
 export default function Home() {
   return (
     <>
-      <Header />
       <Title>
         <h1>UniBand</h1>
         <p>Auckland's top tertiary-level Concert Band</p>
@@ -155,7 +153,6 @@ export default function Home() {
         </AboutText>
       </About>
       <Gallery>Gallery here</Gallery>
-      <Footer />
     </>
   );
 }

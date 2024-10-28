@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/registry";
+import { Footer, Header } from "@/components/header-footer";
 
 export const metadata: Metadata = {
   title: "UniBand",
@@ -18,7 +19,11 @@ export default function RootLayout({
         <link rel="icon" href="/public/favicon.ico" />
       </head>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Header />
+          {children}
+          <Footer />
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
