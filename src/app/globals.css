@@ -11,6 +11,8 @@ body {
 body {
   color: var(--foreground);
   font-family: "Mona Sans", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  position: relative;
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
