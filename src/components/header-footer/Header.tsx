@@ -9,11 +9,12 @@ const StyledHeader = styled.header`
   box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
   padding-block: 1.5rem;
   padding-inline: 4rem;
   position: sticky;
   top: 0;
-  margin-bottom: 1rem;
+  z-index: 1000;
 
   a {
     color: inherit;

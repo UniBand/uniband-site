@@ -1,6 +1,7 @@
 "use client";
 
 import { Title } from "@/components/atomic";
+import { OpenInNewRounded } from "@mui/icons-material";
 import styled from "styled-components";
 
 const BodyContent = styled.div`
@@ -27,13 +28,32 @@ const BodyContent = styled.div`
   }
 `;
 
+const FormBlock = styled.div`
+  height: 80vh;
+  margin-top: 2rem;
+  position: relative;
+  width: 80%;
+`;
+
 const JoinForm = styled.iframe`
   border: none;
-  height: 80vh;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+`;
+
+const JoinFormButton = styled.button`
+  background-color: var(--background);
   border-radius: 1rem;
-  margin-top: 2rem;
+  border: none;
+  bottom: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  color: var(--hyperlink);
 `;
 
 export default function Join() {
@@ -53,12 +73,22 @@ export default function Join() {
           If you have any questions, feel free to{" "}
           <a href="/contact">contact us</a>!
         </p>
-        <JoinForm
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform?embedded=true"
-          title="UniBand Sign-up Form"
-        >
-          Loading…
-        </JoinForm>
+        <FormBlock>
+          <JoinForm
+            src={
+              "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform" +
+              "?embedded=true"
+            }
+            title="UniBand Sign-up Form"
+          >
+            Loading…
+          </JoinForm>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform">
+            <JoinFormButton>
+              <OpenInNewRounded />
+            </JoinFormButton>
+          </a>
+        </FormBlock>
       </BodyContent>
     </>
   );
