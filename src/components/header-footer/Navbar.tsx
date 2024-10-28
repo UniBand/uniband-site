@@ -88,7 +88,7 @@ export default function Navbar() {
             <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/signup">Sign Up</Link>
+            <Link href="/join">Join Us</Link>
           </li>
         </Links>
       </LinkGroup>

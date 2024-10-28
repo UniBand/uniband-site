@@ -10,8 +10,8 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
   font-family: "Mona Sans", Arial, Helvetica, sans-serif;
+  background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,6 +31,10 @@ main {
   display: grid;
   gap: 5rem;
   padding-block: 2rem;
+}
+
+button {
+  font-family: "Mona Sans", Arial, Helvetica, sans-serif;
 }
 
 @layer fonts {

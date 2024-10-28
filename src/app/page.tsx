@@ -24,6 +24,25 @@ const Title = styled.div`
   }
 `;
 
+const JoinButton = styled.button`
+  background: linear-gradient(40deg, #00457d, #0096c5);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--background);
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-stretch: expanded;
+  font-weight: 600;
+  margin-top: 2rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  transition: transform 400ms ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
 const About = styled.div`
   background: #00457d;
   color: var(--background);
@@ -98,7 +117,9 @@ export default function Home() {
       <Title>
         <h1>UniBand</h1>
         <p>Auckland's top tertiary-level Concert Band</p>
-        {/* sign up button? */}
+        <JoinButton>
+          <a href="/join">Join the band</a>
+        </JoinButton>
       </Title>
       <About>
         <AboutImage>
