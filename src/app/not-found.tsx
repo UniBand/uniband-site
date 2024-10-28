@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const NotFound = styled.div`
   margin-block: 5rem;
-  padding-inline: 10rem;
+  padding-inline: var(--body-margins);
   text-align: center;
 
   h1 {

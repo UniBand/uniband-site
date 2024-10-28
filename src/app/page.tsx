@@ -1,22 +1,15 @@
 "use client";
 
+import Title from "@/components/atomic/Title";
 import { EmailOutlined, YouTube } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import styled from "styled-components";
 
-const Title = styled.div`
+const TitleBlock = styled.div`
   padding-block: 10rem;
   text-align: center;
   font-stretch: expanded;
-
-  h1 {
-    background: linear-gradient(40deg, #00457d, #0096c5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 9rem;
-    font-weight: 700;
-  }
 
   p {
     font-size: 2rem;
@@ -49,7 +42,7 @@ const About = styled.div`
   gap: 2rem;
   grid-template-columns: 60% auto;
   padding-block: 2rem;
-  padding-inline: 10rem;
+  padding-inline: var(--body-margins);
 `;
 
 const AboutImage = styled.div`
@@ -106,19 +99,19 @@ const HighlightedText = styled.span`
 
 const Gallery = styled.div`
   padding-block: 20rem;
-  padding-inline: 10rem;
+  padding-inline: var(--body-margins);
 `;
 
 export default function Home() {
   return (
     <>
-      <Title>
-        <h1>UniBand</h1>
+      <TitleBlock>
+        <Title fontSize="9rem">UniBand</Title>
         <p>Auckland's top tertiary-level Concert Band</p>
         <JoinButton>
           <a href="/join">Join the band</a>
         </JoinButton>
-      </Title>
+      </TitleBlock>
       <About>
         <AboutImage>
           <img

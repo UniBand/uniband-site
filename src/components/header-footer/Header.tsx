@@ -6,13 +6,14 @@ import Navbar from "./Navbar";
 
 const StyledHeader = styled.header`
   background: linear-gradient(40deg, #00457d, #0096c5);
-  box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   padding-block: 1.5rem;
   padding-inline: 4rem;
   position: sticky;
   top: 0;
+  margin-bottom: 1rem;
 
   a {
     color: inherit;

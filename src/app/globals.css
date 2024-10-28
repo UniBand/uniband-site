@@ -1,6 +1,8 @@
 :root {
   --background: #dbdbdb;
   --foreground: #171717;
+
+  --body-margins: 10rem;
 }
 
 html,

@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   gap: 2rem;
   padding-block: 2rem;
-  padding-inline: 10rem;
+  padding-inline: var(--body-margins);
   position: absolute;
   width: 100%;
 `;
