@@ -33,7 +33,7 @@ const HomeLink = styled.a`
   font-weight: 700;
   gap: 1rem;
   text-decoration: none;
-  transition: opacity 100ms ease;
+  transition: opacity 200ms ease;
 
   &:hover {
     opacity: 0.9;
@@ -64,10 +64,10 @@ const Links = styled.ul.attrs({ role: "list" })`
 
   li {
     padding-inline: 1rem;
-    transition: opacity 0.2s ease;
+    transition: opacity 200ms ease;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
   }
 `;
