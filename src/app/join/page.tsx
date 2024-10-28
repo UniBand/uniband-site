@@ -5,14 +5,12 @@ import { OpenInNewRounded } from "@mui/icons-material";
 import styled from "styled-components";
 
 const BodyContent = styled.div`
-  padding-inline: var(--body-margins);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-direction: column;
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 2fr 3fr;
   margin-top: 2rem;
-  align-items: center;
+  padding-inline: var(--body-margins);
 
   b {
     font-weight: 700;
@@ -28,11 +26,20 @@ const BodyContent = styled.div`
   }
 `;
 
+const JoinText = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+  text-align: left;
+`;
+
 const FormBlock = styled.div`
   height: 80vh;
-  margin-top: 1rem;
   position: relative;
-  width: 80%;
+  width: 100%;
 `;
 
 const JoinForm = styled.iframe`
@@ -61,18 +68,20 @@ export default function Join() {
     <>
       <Title>Join us</Title>
       <BodyContent>
-        <p>
-          Our band is open to all students studying in the{" "}
-          <b>University of Auckland</b> and <b>AUT</b>. No audition required!
-        </p>
-        <p>
-          As a concert band, we are always looking for musicians playing{" "}
-          <b>woodwind</b>, <b>brass</b>, and <b>percussion</b> instruments.
-        </p>
-        <p>
-          If you have any questions, feel free to{" "}
-          <a href="/contact">contact us</a>!
-        </p>
+        <JoinText>
+          <p>
+            Our band is open to all students studying in the{" "}
+            <b>University of Auckland</b> and <b>AUT</b>. No audition required!
+          </p>
+          <p>
+            As a concert band, we are always looking for musicians playing{" "}
+            <b>woodwind</b>, <b>brass</b>, and <b>percussion</b> instruments.
+          </p>
+          <p>
+            If you have any questions, feel free to{" "}
+            <a href="/contact">contact us</a>!
+          </p>
+        </JoinText>
         <FormBlock>
           <JoinForm
             src={
