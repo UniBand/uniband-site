@@ -33,10 +33,10 @@ const HomeLink = styled.a`
   font-weight: 700;
   gap: 1rem;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 100ms ease;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `;
 

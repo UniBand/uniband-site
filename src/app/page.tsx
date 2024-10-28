@@ -1,10 +1,13 @@
 "use client";
 
 import { Header } from "@/components/header-footer";
+import { EmailOutlined, YouTube } from "@mui/icons-material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import styled from "styled-components";
 
 const Title = styled.div`
-  padding-block: 6rem;
+  padding-block: 10rem;
   text-align: center;
   font-stretch: expanded;
 
@@ -32,17 +35,21 @@ const About = styled.div`
 `;
 
 const AboutImage = styled.div`
+  align-items: center;
   display: flex;
   justify-content: center;
 
   img {
-    width: 100%;
     border-radius: 1rem;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    width: 100%;
   }
 `;
 
 const AboutText = styled.div`
-  align-items: center;
+  align-items: start;
   display: flex;
   flex-direction: column;
   font-size: 2rem;
@@ -50,12 +57,27 @@ const AboutText = styled.div`
   justify-content: center;
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
+  }
+`;
+
+const AboutIcons = styled.div`
+  display: flex;
+  gap: 0.5rem;
+
+  * {
+    color: var(--background);
+    height: 1.5rem;
+    width: auto;
+    transition: opacity 100ms ease;
+
+    &:hover {
+      opacity: 0.9;
   }
 `;
 
@@ -95,6 +117,20 @@ export default function Home() {
             we rehearse weekly on Thursday evenings and perform in concerts and
             competitions throughout the year.
           </p>
+          <AboutIcons>
+            <a href="https://www.instagram.com/uoa_uniband">
+              <InstagramIcon />
+            </a>
+            <a href="https://www.facebook.com/UniBandNZ">
+              <FacebookIcon />
+            </a>
+            <a href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw">
+              <YouTube />
+            </a>
+            <a href="mailto:info@uniband.nz">
+              <EmailOutlined />
+            </a>
+          </AboutIcons>
         </AboutText>
       </About>
       <Gallery>Gallery here</Gallery>
