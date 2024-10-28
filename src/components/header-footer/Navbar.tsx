@@ -25,10 +25,26 @@ const Icon = styled.img`
   width: auto;
 `;
 
-const HomeLink = () => (
-  <Link href="/">
+const HomeLink = styled.a`
+  align-items: center;
+  display: flex;
+  font-size: 4rem;
+  font-stretch: expanded;
+  font-weight: 700;
+  gap: 1rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+const HomeLinkComponent = () => (
+  <HomeLink href="/">
     <Icon src="/UniBandLogo.png" alt="UniBand Logo" />
-  </Link>
+    UniBand
+  </HomeLink>
 );
 
 const LinkGroup = styled.div`
@@ -42,15 +58,24 @@ const LinkGroup = styled.div`
 const Links = styled.ul.attrs({ role: "list" })`
   display: flex;
   flex-direction: row;
-  font-size: 1.5rem;
-  gap: 1rem;
+  font-size: 2rem;
+  gap: 2rem;
   list-style-type: none;
+
+  li {
+    padding-inline: 1rem;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `;
 
 export default function Navbar() {
   return (
     <Nav>
-      <HomeLink />
+      <HomeLinkComponent />
       <LinkGroup>
         <Links>
           <li>
