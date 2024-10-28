@@ -59,7 +59,7 @@ const Links = styled.ul.attrs({ role: "list" })`
   display: flex;
   flex-direction: row;
   font-size: 1.5rem;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style-type: none;
 
   li {
@@ -86,6 +86,9 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link href="/signup">Sign Up</Link>
           </li>
         </Links>
       </LinkGroup>

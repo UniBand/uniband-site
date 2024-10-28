@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   padding-block: 1.5rem;
-  padding-inline: 5rem;
+  padding-inline: 4rem;
   position: sticky;
   top: 0;
 

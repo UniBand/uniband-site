@@ -28,6 +28,12 @@ a {
   text-decoration: none;
 }
 
+main {
+  display: grid;
+  gap: 5rem;
+  padding-block: 2rem;
+}
+
 @layer fonts {
   @font-face {
     font-family: "Mona Sans";
