@@ -1,6 +1,6 @@
 "use client";
 
-import { Header } from "@/components/header-footer";
+import { Footer, Header } from "@/components/header-footer";
 import { EmailOutlined, YouTube } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -134,6 +134,7 @@ export default function Home() {
         </AboutText>
       </About>
       <Gallery>Gallery here</Gallery>
+      <Footer />
     </>
   );
 }
