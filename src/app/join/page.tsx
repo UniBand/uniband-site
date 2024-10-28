@@ -66,7 +66,7 @@ const JoinFormButton = styled.button`
 export default function Join() {
   return (
     <>
-      <Title>Join us</Title>
+      <Title>Join Us</Title>
       <BodyContent>
         <JoinText>
           <p>

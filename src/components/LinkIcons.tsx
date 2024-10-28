@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { EmailOutlined, YouTube } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Givealittle from "./icons/GiveALittle";
 
 const LinkIconsStyled = styled.div`
   display: flex;
@@ -29,6 +30,9 @@ export default function LinkIcons() {
       </a>
       <a href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw">
         <YouTube />
+      </a>
+      <a href="https://givealittle.co.nz/org/uniband">
+        <Givealittle />
       </a>
       <a href="mailto:info@uniband.nz">
         <EmailOutlined />
