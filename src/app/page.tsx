@@ -1,9 +1,7 @@
 "use client";
 
 import { Title } from "@/components/atomic";
-import { EmailOutlined, YouTube } from "@mui/icons-material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkIcons from "@/components/LinkIcons";
 import styled from "styled-components";
 
 const TitleBlock = styled.div`
@@ -77,21 +75,6 @@ const AboutText = styled.div`
   }
 `;
 
-const AboutIcons = styled.div`
-  display: flex;
-  gap: 0.5rem;
-
-  * {
-    color: var(--background);
-    height: 1.5rem;
-    width: auto;
-    transition: opacity 100ms ease;
-
-    &:hover {
-      opacity: 0.9;
-  }
-`;
-
 const HighlightedText = styled.span`
   font-stretch: expanded;
   font-weight: 700;
@@ -129,20 +112,7 @@ export default function Home() {
             we rehearse weekly on Thursday evenings and perform in concerts and
             competitions throughout the year.
           </p>
-          <AboutIcons>
-            <a href="https://www.instagram.com/uoa_uniband">
-              <InstagramIcon />
-            </a>
-            <a href="https://www.facebook.com/UniBandNZ">
-              <FacebookIcon />
-            </a>
-            <a href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw">
-              <YouTube />
-            </a>
-            <a href="mailto:info@uniband.nz">
-              <EmailOutlined />
-            </a>
-          </AboutIcons>
+          <LinkIcons />
         </AboutText>
       </About>
       <Gallery>Gallery here</Gallery>
