@@ -3,8 +3,163 @@ import { Header } from "@/components/header-footer";
 export default function Home() {
   return (
     <>
-      <Header/>
+      <Header />
       hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
+      hi
+      <br />
     </>
   );
 }

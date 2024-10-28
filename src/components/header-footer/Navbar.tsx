@@ -21,14 +21,14 @@ const Nav = styled.nav`
 `;
 
 const Icon = styled.img`
-  height: 6rem;
+  height: 4rem;
   width: auto;
 `;
 
 const HomeLink = styled.a`
   align-items: center;
   display: flex;
-  font-size: 4rem;
+  font-size: 3rem;
   font-stretch: expanded;
   font-weight: 700;
   gap: 1rem;
@@ -58,7 +58,7 @@ const LinkGroup = styled.div`
 const Links = styled.ul.attrs({ role: "list" })`
   display: flex;
   flex-direction: row;
-  font-size: 2rem;
+  font-size: 1.5rem;
   gap: 2rem;
   list-style-type: none;
 
@@ -79,7 +79,10 @@ export default function Navbar() {
       <LinkGroup>
         <Links>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/events">Events</Link>
+          </li>
+          <li>
+            <Link href="/videos">Videos</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
