@@ -66,7 +66,7 @@ const AboutText = styled.div`
   justify-content: center;
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
   }
 
@@ -90,7 +90,7 @@ export default function Home() {
     <>
       <TitleBlock>
         <Title fontSize="9rem">UniBand</Title>
-        <p>Auckland's top tertiary-level Concert Band</p>
+        <p>Auckland’s top tertiary-level Concert Band</p>
         <JoinButton>
           <a href="/join">Join the band</a>
         </JoinButton>
@@ -105,7 +105,7 @@ export default function Home() {
         <AboutText>
           <h2>
             <HighlightedText>UniBand</HighlightedText> is the University of
-            Auckland's leading Concert Band.
+            Auckland’s leading Concert Band.
           </h2>
           <p>
             Comprised of wind, brass, and percussion musicians from all degrees,

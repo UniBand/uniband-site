@@ -5,7 +5,7 @@ import { Footer, Header } from "@/components/header-footer";
 
 export const metadata: Metadata = {
   title: "UniBand",
-  description: "Auckland's top tertiary-level concert band",
+  description: "Auckland’s top tertiary-level concert band",
 };
 
 export default function RootLayout({
