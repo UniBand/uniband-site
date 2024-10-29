@@ -48,6 +48,7 @@ export const UniBandEvents: Event[] = [
       startDate: "2023-10-07",
       description:
         "The 2023 Semester 2 concert, performed by UniBand, AYSB, and AUSC. Directed by Jono Palmer and Michael Jamieson.",
+      imagePath: "events/end-of-year-2023.jpg",
       location: "UOA School of Music",
       locationUrl: "https://maps.app.goo.gl/CnUqPeCbFpZ6ka4aA",
       youtubeCodes: ["7uQD_O2jOFg", "e6Xe2XssKSA", "AsXP5PaNwWk"],
@@ -70,7 +71,16 @@ export const UniBandEvents: Event[] = [
       locationUrl: "https://maps.app.goo.gl/CnUqPeCbFpZ6ka4aA",
       youtubeCodes: ["Iu6xt97DQvc"],
     },
-    
+    {
+      title: "Simple Gifts",
+      startDate: "2022-07-30",
+      description:
+        "A joint pre-Festival concert, performed by UniBand, AYSB, and AWO. Directed by Jono Palmer.",
+      location: "Presbyterian Church St Lukes",
+      locationUrl: "https://maps.app.goo.gl/bJXfpysBYAAAJZeK6",
+      youtubeCodes: ["yze1AbWHAZU", "ykN6BejL6Jo", "-e7OaW1dKwA", "ZF0AyR3RFTY", "-mHZcYbfUbQ"]
+    },
+
     // NZCBA Festivals
     {
       title: "NZCBA Festival 2025",
