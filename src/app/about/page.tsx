@@ -140,8 +140,13 @@ export default function About() {
             <p>
               <UniBandText /> performs at a variety of events throughout the
               year, including self-hosted concerts, university events, and the
-              annual NZCBA Concert Band Festival. We also have a strong social
-              aspect, with regular social events and a tight-knit community.
+              annual NZCBA Concert Band Festival.
+            </p>
+            <p>
+              The heart of <UniBandText /> is the tight social community at its
+              core. With a welcoming social environment and multiple casual
+              events throughout the year, members form lasting friendships and
+              connections.
             </p>
             <p>
               Rehearsals are held weekly on Thursdays evenings from 7-9pm on

@@ -34,6 +34,24 @@ const JoinButton = styled.button`
   }
 `;
 
+const AboutUsButton = styled.button`
+  background: var(--dark-blue);
+  border-radius: 0.5rem;
+  border: var(--background) 2px solid;
+  color: var(--background);
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-stretch: expanded;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  transition: background 400ms ease, color 400ms ease;
+
+  &:hover {
+    background: var(--background);
+    color: var(--dark-blue);
+  }
+`;
+
 const About = styled.div`
   background: var(--dark-blue);
   color: var(--background);
@@ -84,10 +102,17 @@ export default function Home() {
             Band
           </h2>
           <p>
-            Comprised of wind, brass, and percussion musicians from across the
-            university, we rehearse weekly on Thursday evenings and perform in
-            concerts and competitions throughout the year.
+            <UniBandText /> provides an opportunity for wind, brass, and
+            percussion musicians from all across the university to come together
+            and make music.
           </p>
+          <p>
+            We rehearse weekly on Thursday evenings and perform in concerts and
+            competitions throughout the year.
+          </p>
+          <AboutUsButton>
+            <a href="/about">Learn more</a>
+          </AboutUsButton>
           <LinkIcons />
         </AboutText>
       </About>
