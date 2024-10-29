@@ -68,3 +68,10 @@ export function UniBandText({
   }
   return <HighlightedText fontWeight={fontWeight}>UniBand</HighlightedText>;
 }
+
+export function decodeHTMLEntities(text: string): string {
+  const parser = new DOMParser();
+  const decoded = parser.parseFromString(text, "text/html").documentElement
+    .textContent;
+  return decoded || "";
+}
