@@ -1,6 +1,6 @@
 "use client";
 
-import { Title } from "@/components/atomic";
+import { SpacedTitle, Title } from "@/components/atomic";
 import {
   Event,
   EventComponent,
@@ -63,7 +63,7 @@ export default function Events() {
 
   return (
     <>
-      <Title>Events</Title>
+      <SpacedTitle>Events</SpacedTitle>
 
       {currentEvents.length > 0 ? (
         <EventsList events={currentEvents} />

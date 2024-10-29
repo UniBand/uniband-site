@@ -1,6 +1,6 @@
 "use client";
 
-import { Title } from "@/components/atomic";
+import { Title, SpacedTitle } from "@/components/atomic";
 import styled from "styled-components";
 import { HighlightImage, UniBandText } from "@/components/components";
 import { PeopleList, Person } from "@/components/People";
@@ -9,7 +9,6 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 2rem;
 `;
 
 const Blurb = styled.div`
@@ -120,7 +119,7 @@ export default function About() {
 
   return (
     <>
-      <Title>About</Title>
+      <SpacedTitle>About</SpacedTitle>
       <ContentContainer>
         <Blurb>
           <HighlightImage src="about/blurb-img.jpg" alt="UniBand performing" />

@@ -29,7 +29,7 @@ const EventContainer = styled.div`
 
 const EventImage = styled.div`
   max-height: 750px;
-  max-width: 40%;
+  width: 40%;
 `;
 
 const EventContents = styled.div`

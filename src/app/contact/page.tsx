@@ -1,6 +1,6 @@
 "use client";
 
-import { Title } from "@/components/atomic";
+import { SpacedTitle } from "@/components/atomic";
 import config from "../config/config";
 import styled from "styled-components";
 import { BodyContent } from "@/components/components";
@@ -31,7 +31,7 @@ const ContactText = styled.div`
 export default function Contact() {
   return (
     <>
-      <Title>Contact Us</Title>
+      <SpacedTitle>Contact Us</SpacedTitle>
       <ContentContainer>
         <MapFrame
           style={{ border: 0 }}

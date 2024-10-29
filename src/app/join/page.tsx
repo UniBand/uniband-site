@@ -1,6 +1,6 @@
 "use client";
 
-import { Title } from "@/components/atomic";
+import { SpacedTitle } from "@/components/atomic";
 import { BodyContent, UniBandText } from "@/components/components";
 import { OpenInNewRounded } from "@mui/icons-material";
 import styled from "styled-components";
@@ -51,7 +51,7 @@ const JoinFormButton = styled.button`
 export default function Join() {
   return (
     <>
-      <Title>Join Us</Title>
+      <SpacedTitle>Join Us</SpacedTitle>
       <ContentContainer>
         <JoinText>
           <p>

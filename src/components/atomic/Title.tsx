@@ -10,20 +10,33 @@ const StyledTitle = styled.h1<{ fontSize: string; background?: string }>`
   text-align: center;
 `;
 
+const StyledSpacedTitle = styled(StyledTitle)`
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+`;
+
 interface TitleProps {
   children: React.ReactNode;
   fontSize?: string;
   background?: string;
 }
 
-export default function Title({
+export function Title({ children, fontSize = "6rem", background }: TitleProps) {
+  return (
+    <StyledTitle fontSize={fontSize} background={background}>
+      {children}
+    </StyledTitle>
+  );
+}
+
+export function SpacedTitle({
   children,
   fontSize = "6rem",
   background,
 }: TitleProps) {
   return (
-    <StyledTitle fontSize={fontSize} background={background}>
+    <StyledSpacedTitle fontSize={fontSize} background={background}>
       {children}
-    </StyledTitle>
+    </StyledSpacedTitle>
   );
 }
