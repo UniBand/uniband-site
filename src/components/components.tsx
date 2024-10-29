@@ -3,14 +3,17 @@ import styled from "styled-components";
 const HighlightImageStyle = styled.div`
   align-items: center;
   display: flex;
+  height: 100%;
   justify-content: center;
+  width: 100%;
 
   img {
     border-radius: 1rem;
     height: auto;
     max-height: 100%;
+    max-width: 100%;
     object-fit: contain;
-    width: 100%;
+    width: auto;
   }
 `;
 
