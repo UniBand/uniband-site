@@ -17,7 +17,7 @@ interface Url {
   name: string;
   url: string;
   alt?: string;
-  hideWhenComplete: boolean;
+  hideWhenComplete?: boolean;
 }
 
 const EventContainer = styled.div`
@@ -36,6 +36,7 @@ const EventContents = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  flex: 1;
 `;
 
 const EventTitle = styled.h1`
@@ -131,7 +132,7 @@ function formatDate(startDate: string, endDate?: string) {
 
     if (startDateObject.getFullYear() === endDateObject.getFullYear()) {
       if (startDateObject.getMonth() === endDateObject.getMonth()) {
-        return `${startDateObject.getDate()} - ${endDateObject.getDate()} ${startDateObject.toLocaleDateString(
+        return `${startDateObject.getDate()}–${endDateObject.getDate()} ${startDateObject.toLocaleDateString(
           "en-NZ",
           { month: "long", year: "numeric" }
         )}`;
@@ -139,12 +140,12 @@ function formatDate(startDate: string, endDate?: string) {
       return `${startDateObject.getDate()} ${startDateObject.toLocaleDateString(
         "en-NZ",
         { month: "long" }
-      )} - ${endDateObject.getDate()} ${endDateObject.toLocaleDateString(
+      )} – ${endDateObject.getDate()} ${endDateObject.toLocaleDateString(
         "en-NZ",
         { month: "long", year: "numeric" }
       )}`;
     }
-    return `${startDateFormatted} - ${endDateFormatted}`;
+    return `${startDateFormatted} – ${endDateFormatted}`;
   }
 
   return startDateFormatted;
@@ -189,13 +190,9 @@ export function EventComponent({
   );
 
   const imageFragment = (
-    <>
-      {imagePath && (
-        <EventImage>
-          <HighlightImage src={imagePath} alt={title} />
-        </EventImage>
-      )}
-    </>
+    <EventImage>
+      <HighlightImage src={imagePath ?? "UniBandLogo-spaced.png"} alt={title} />
+    </EventImage>
   );
 
   const contentsFragment = (
