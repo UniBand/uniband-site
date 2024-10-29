@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const StyledTitle = styled.h1<{ fontSize: string }>`
-  background: var(--blue-gradient);
+const StyledTitle = styled.h1<{ fontSize: string; background?: string }>`
+  background: ${({ background }) => background || "var(--blue-gradient)"};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: ${({ fontSize }) => fontSize};
@@ -13,8 +13,17 @@ const StyledTitle = styled.h1<{ fontSize: string }>`
 interface TitleProps {
   children: React.ReactNode;
   fontSize?: string;
+  background?: string;
 }
 
-export default function Title({ children, fontSize = "6rem" }: TitleProps) {
-  return <StyledTitle fontSize={fontSize}>{children}</StyledTitle>;
+export default function Title({
+  children,
+  fontSize = "6rem",
+  background,
+}: TitleProps) {
+  return (
+    <StyledTitle fontSize={fontSize} background={background}>
+      {children}
+    </StyledTitle>
+  );
 }

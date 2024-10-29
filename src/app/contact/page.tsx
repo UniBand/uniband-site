@@ -49,7 +49,7 @@ export default function Contact() {
           </p>
           <p>
             You can also find us at the <b>School of Music</b> in the University
-            of Auckland (6 Symonds Street, Auckland Central, Auckland 1010).
+            of Auckland (6 Symonds Street, Auckland 1010).
           </p>
         </ContactText>
       </ContentContainer>

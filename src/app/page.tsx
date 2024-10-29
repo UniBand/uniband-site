@@ -56,10 +56,6 @@ const AboutText = styled.div`
     font-size: 2rem;
     font-weight: 400;
   }
-
-  p {
-    font-size: 1rem;
-  }
 `;
 
 const Gallery = styled.div`
