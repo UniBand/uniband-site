@@ -1,29 +1,14 @@
 "use client";
 
 import { Title } from "@/components/atomic";
+import { BodyContent } from "@/components/BodyContent";
 import { OpenInNewRounded } from "@mui/icons-material";
 import styled from "styled-components";
 
-const BodyContent = styled.div`
-  align-items: start;
+const ContentContainer = styled(BodyContent)`
   display: grid;
   gap: 2rem;
   grid-template-columns: 2fr 3fr;
-  margin-top: 2rem;
-  padding-inline: var(--body-margins);
-
-  b {
-    font-weight: 700;
-  }
-
-  a {
-    color: var(--hyperlink);
-    transition: opacity 200ms ease;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
 `;
 
 const JoinText = styled.div`
@@ -67,7 +52,7 @@ export default function Join() {
   return (
     <>
       <Title>Join Us</Title>
-      <BodyContent>
+      <ContentContainer>
         <JoinText>
           <p>
             Our band is open to all students studying in the{" "}
@@ -98,7 +83,7 @@ export default function Join() {
             </JoinFormButton>
           </a>
         </FormBlock>
-      </BodyContent>
+      </ContentContainer>
     </>
   );
 }
