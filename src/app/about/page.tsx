@@ -39,7 +39,7 @@ const People = styled.div`
   justify-content: center;
 `;
 
-const Conductor = styled.div`
+const Director = styled.div`
   padding-inline: var(--body-margins);
   display: grid;
   gap: 2rem;
@@ -158,11 +158,11 @@ export default function About() {
           </Title>
           <PeopleList people={generalCommittee} />
         </People>
-        <Conductor>
+        <Director>
           <HighlightImage src="about/people/jono.jpg" alt="Jono Palmer" />
           <div>
             <h1>Jono Palmer</h1>
-            <h2>Conductor</h2>
+            <h2>Musical Director</h2>
             <p>
               Jono Palmer is a dynamic and enterprising conductor from Auckland,
               New Zealand. His choirs have won national and international
@@ -176,7 +176,7 @@ export default function About() {
               Competition.
             </p>
           </div>
-        </Conductor>
+        </Director>
       </ContentContainer>
     </>
   );
