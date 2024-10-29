@@ -51,12 +51,14 @@ const EventDetails = styled.p`
   }
 `;
 
+const EventDescription = styled.p``;
+
 const Urls = styled.div`
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
   flex-direction: row;
-  padding-block: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 `;
 
 const UrlButtonStyled = styled.a`
@@ -80,6 +82,7 @@ const YouTubeEmbedContainer = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin-top: 1rem;
 `;
 
 const YouTubeEmbedStyle = styled.iframe`
@@ -88,6 +91,16 @@ const YouTubeEmbedStyle = styled.iframe`
   height: 100%;
   width: 100%;
   border-radius: 1rem;
+`;
+
+const Countdown = styled.p`
+  font-size: 4rem;
+  font-stretch: expanded;
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 1rem;
+  opacity: 0.4;
+  padding-left: 1rem;
 `;
 
 function UrlButton({ url }: { url: Url }) {
@@ -166,6 +179,14 @@ export function EventComponent({
   youtubeCodes = [],
   imageFirst = true,
 }: Event & { imageFirst?: boolean }) {
+  const isComplete = endDate
+    ? new Date(endDate) < new Date()
+    : new Date(startDate) < new Date();
+
+  const activeUrls = urls.filter(
+    (url) => !(url.hideWhenComplete && isComplete)
+  );
+
   const imageFragment = (
     <>
       {imagePath && (
@@ -197,19 +218,34 @@ export function EventComponent({
           {formatDate(startDate, endDate)}
         </EventDetails>
 
-        <p>{description}</p>
+        <EventDescription>{description}</EventDescription>
 
-        <Urls>
-          {urls.map((url) => (
-            <UrlButton key={url.url} url={url} />
-          ))}
-        </Urls>
+        {activeUrls.length > 0 && (
+          <Urls>
+            {activeUrls.map((url) => (
+              <UrlButton key={url.url} url={url} />
+            ))}
+          </Urls>
+        )}
 
-        <YouTubeEmbedContainer>
-          {youtubeCodes.map((youtubeCode) => (
-            <YouTubeEmbed key={youtubeCode} youtubeCode={youtubeCode} />
-          ))}
-        </YouTubeEmbedContainer>
+        {youtubeCodes.length > 0 && (
+          <YouTubeEmbedContainer>
+            {youtubeCodes.map((youtubeCode) => (
+              <YouTubeEmbed key={youtubeCode} youtubeCode={youtubeCode} />
+            ))}
+          </YouTubeEmbedContainer>
+        )}
+
+        {!isComplete && (
+          <Countdown>
+            in{" "}
+            {Math.ceil(
+              (new Date(startDate).getTime() - new Date().getTime()) /
+                (1000 * 60 * 60 * 24)
+            )}{" "}
+            days
+          </Countdown>
+        )}
       </EventContents>
     </>
   );
