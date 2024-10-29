@@ -24,6 +24,7 @@ const EventContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  justify-content: space-between;
 `;
 
 const EventImage = styled.div`
