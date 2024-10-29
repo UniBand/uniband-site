@@ -16,7 +16,7 @@ const TitleBlock = styled.div`
 `;
 
 const JoinButton = styled.button`
-  background: linear-gradient(40deg, #00457d, #0096c5);
+  background: var(--blue-gradient);
   border-radius: 0.5rem;
   border: none;
   color: var(--background);
@@ -35,7 +35,7 @@ const JoinButton = styled.button`
 `;
 
 const About = styled.div`
-  background: #00457d;
+  background: var(--dark-blue);
   color: var(--background);
   display: grid;
   gap: 2rem;

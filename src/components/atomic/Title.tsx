@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledTitle = styled.h1<{ fontSize: string }>`
-  background: linear-gradient(40deg, #00457d, #0096c5);
+  background: var(--blue-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: ${({ fontSize }) => fontSize};

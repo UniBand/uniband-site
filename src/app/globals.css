@@ -1,9 +1,15 @@
 :root {
   --background: #dbdbdb;
   --foreground: #171717;
-  --hyperlink: #00457d;
+
+  --light-blue: #0096c5;
+  --dark-blue: #00457d;
+
+  --hyperlink: var(--dark-blue);
 
   --body-margins: 10vw;
+
+  --blue-gradient: linear-gradient(40deg, var(--dark-blue), var(--light-blue));
 }
 
 html,

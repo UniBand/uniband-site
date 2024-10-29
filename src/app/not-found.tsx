@@ -8,7 +8,7 @@ const NotFound = styled.div`
   text-align: center;
 
   h1 {
-    background: linear-gradient(40deg, #00457d, #0096c5);
+    background: var(--blue-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 10rem;

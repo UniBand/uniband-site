@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 
 const StyledHeader = styled.header`
-  background: linear-gradient(40deg, #00457d, #0096c5);
+  background: var(--blue-gradient);
   box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;

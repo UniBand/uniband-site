@@ -29,6 +29,10 @@ const BlurbContent = styled.div`
   margin-top: 0.5rem;
 `;
 
+const People = styled.div`
+  background-color: var(--background);
+`;
+
 export default function About() {
   return (
     <>
@@ -62,6 +66,7 @@ export default function About() {
             </p>
           </BlurbContent>
         </Blurb>
+        <People>hi</People>
       </ContentContainer>
     </>
   );

@@ -8,7 +8,7 @@ const FooterWrapper = styled.div`
 `;
 
 const StyledFooter = styled.footer`
-  background: linear-gradient(40deg, #00457d, #0096c5);
+  background: var(--blue-gradient);
   color: white;
   display: flex;
   flex-direction: row;
