@@ -1,6 +1,7 @@
 "use client";
 
 import { Title } from "@/components/atomic";
+import { HighlightImage, UniBandText } from "@/components/components";
 import LinkIcons from "@/components/LinkIcons";
 import styled from "styled-components";
 
@@ -43,20 +44,6 @@ const About = styled.div`
   padding-inline: var(--body-margins);
 `;
 
-const AboutImage = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
-  img {
-    border-radius: 1rem;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
-    width: 100%;
-  }
-`;
-
 const AboutText = styled.div`
   align-items: start;
   display: flex;
@@ -75,11 +62,6 @@ const AboutText = styled.div`
   }
 `;
 
-const HighlightedText = styled.span`
-  font-stretch: expanded;
-  font-weight: 700;
-`;
-
 const Gallery = styled.div`
   padding-block: 20rem;
   padding-inline: var(--body-margins);
@@ -96,21 +78,19 @@ export default function Home() {
         </JoinButton>
       </TitleBlock>
       <About>
-        <AboutImage>
-          <img
-            src="img/2024-nzcba-fun.jpg"
-            alt="UniBand at the NZCBA Concert Band Festival 2024"
-          />
-        </AboutImage>
+        <HighlightImage
+          src="img/2024-nzcba-fun.jpg"
+          alt="UniBand at the NZCBA Concert Band Festival 2024"
+        />
         <AboutText>
           <h2>
-            <HighlightedText>UniBand</HighlightedText> is the University of
-            Auckland’s leading Concert Band.
+            <UniBandText b /> is the University of Auckland’s leading Concert
+            Band
           </h2>
           <p>
-            Comprised of wind, brass, and percussion musicians from all degrees,
-            we rehearse weekly on Thursday evenings and perform in concerts and
-            competitions throughout the year.
+            Comprised of wind, brass, and percussion musicians from across the
+            university, we rehearse weekly on Thursday evenings and perform in
+            concerts and competitions throughout the year.
           </p>
           <LinkIcons />
         </AboutText>

@@ -3,7 +3,7 @@
 import { Title } from "@/components/atomic";
 import config from "../config/config";
 import styled from "styled-components";
-import { BodyContent } from "@/components/BodyContent";
+import { BodyContent } from "@/components/components";
 
 const ContentContainer = styled(BodyContent)`
   display: grid;

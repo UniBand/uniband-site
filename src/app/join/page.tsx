@@ -1,7 +1,7 @@
 "use client";
 
 import { Title } from "@/components/atomic";
-import { BodyContent } from "@/components/BodyContent";
+import { BodyContent, UniBandText } from "@/components/components";
 import { OpenInNewRounded } from "@mui/icons-material";
 import styled from "styled-components";
 
@@ -55,12 +55,17 @@ export default function Join() {
       <ContentContainer>
         <JoinText>
           <p>
-            Our band is open to all students studying in the{" "}
+            <UniBandText /> is open to all students studying in the{" "}
             <b>University of Auckland</b> and <b>AUT</b>. No audition required!
           </p>
           <p>
             As a concert band, we are always looking for musicians playing{" "}
             <b>woodwind</b>, <b>brass</b>, and <b>percussion</b> instruments.
+          </p>
+          <p>
+            We rehearse every <b>Thursday</b> from <b>7pm</b> to <b>9pm</b> at
+            the University of Auckland <b>School of Music</b> during the
+            university semester.
           </p>
           <p>
             If you have any questions, feel free to{" "}
