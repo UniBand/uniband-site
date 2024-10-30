@@ -9,7 +9,7 @@ export interface Person {
 
 const PeopleListStyle = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   justify-content: center;
   flex-wrap: wrap;
 `;
@@ -19,7 +19,6 @@ const ProfileStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
   text-align: center;
   transition: transform 400ms ease;
 
