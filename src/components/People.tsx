@@ -8,9 +8,10 @@ export interface Person {
 }
 
 const PeopleListStyle = styled.div`
-  display: grid;
+  display: flex;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const ProfileStyle = styled.div`
