@@ -4,6 +4,9 @@ import { Title } from "@/components/atomic";
 import { HighlightImage, UniBandText } from "@/components/components";
 import LinkIcons from "@/components/LinkIcons";
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const TitleBlock = styled.div`
   padding-block: 10rem;
@@ -77,9 +80,77 @@ const AboutText = styled.div`
 `;
 
 const Gallery = styled.div`
-  padding-block: 20rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   padding-inline: var(--body-margins);
 `;
+
+const SliderStyle = styled(Slider)`
+  .slick-slide {
+    opacity: 0.8;
+    transition: all 300ms ease;
+    transform: scale(0.9);
+  }
+
+  .slick-center {
+    color: #e67e22;
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+const GalleryImageWrapper = styled.div`
+  align-items: center;
+  border-radius: 1rem;
+  display: flex;
+  height: 50rem;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+`;
+
+const GalleryImage = styled.img`
+  border-radius: 1rem;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+
+  &:hover {
+    transform: scale(0.99);
+  }
+`;
+
+function GalleryComponent() {
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 4000,
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 1,
+    speed: 500,
+    arrows: false,
+  };
+
+  return (
+    <Gallery>
+      <SliderStyle {...settings}>
+        {Array.from({ length: 10 }).map((_, i) => (
+          // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
+          <div>
+            <GalleryImageWrapper>
+              <GalleryImage
+                key={i}
+                src="img/2024-nzcba-fun.jpg"
+                alt="UniBand at the NZCBA Concert Band Festival 2024"
+              />
+            </GalleryImageWrapper>
+          </div>
+        ))}
+      </SliderStyle>
+    </Gallery>
+  );
+}
 
 export default function Home() {
   return (
@@ -116,7 +187,7 @@ export default function Home() {
           <LinkIcons />
         </AboutText>
       </About>
-      <Gallery>Gallery here</Gallery>
+      <GalleryComponent />
     </>
   );
 }
