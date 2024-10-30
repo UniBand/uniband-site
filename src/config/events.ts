@@ -150,7 +150,7 @@ export const UniBandEvents: Event[] = [
       endDate: "2021-08-01",
       description:
         "UniBand performed at the 2021 NZCBA Concert Band Festival in Napier, scoring a Bronze award. Directed by Leo Jaffrey.",
-      // imagePath: "events/nzcba-2021.jpg",
+      imagePath: "events/nzcba-2021.png",
       location: "Napier Municipal Theatre, Napier",
       locationUrl: "https://maps.app.goo.gl/QVe4w2nChqYzdjDF6",
       youtubeCodes: ["PGMTUdf121w"],
