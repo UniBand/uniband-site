@@ -63,10 +63,10 @@ export const UniBandEvents: Event[] = [
       locationUrl: "https://maps.app.goo.gl/CnUqPeCbFpZ6ka4aA",
     },
     {
-      title: "Sam U's Honours Recital",
+      title: "Sam Uatahausi's Honours Recital",
       startDate: "2022-10-14",
       description:
-        "UniBand was conducted by Sam U in his honours recital performance.",
+        "UniBand was conducted by Sam Uatahausi in his honours recital performance.",
       location: "UOA School of Music",
       locationUrl: "https://maps.app.goo.gl/CnUqPeCbFpZ6ka4aA",
       youtubeCodes: ["Iu6xt97DQvc"],
