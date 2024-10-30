@@ -3,6 +3,7 @@ import { gapi } from "gapi-script";
 import config from "@/app/config/config";
 import styled from "styled-components";
 import { decodeHTMLEntities } from "./components";
+import { Skeleton } from "@mui/material";
 
 const API_KEY = config.youtube.apiKey;
 const CHANNEL_ID = config.youtube.channelId;
@@ -112,11 +113,40 @@ function VideoCard({ video }: { video: YoutubeVideo }) {
   );
 }
 
+const VideoCardSkeleton = () => (
+  <VideoCardStyle>
+    <Skeleton
+      animation="wave"
+      variant="rounded"
+      sx={{
+        aspectRatio: "16 / 9",
+        borderRadius: "1rem",
+        border: "none",
+        height: "auto",
+        width: "100%",
+      }}
+    />
+
+    <VideoTitle>
+      <Skeleton animation="wave" variant="text" />
+    </VideoTitle>
+  </VideoCardStyle>
+);
+
 export default function VideosComponent() {
   const videos = fetchVideos();
 
-  if (!videos) return <SystemText>Loading...</SystemText>;
   if (typeof videos === "string") return <SystemText>{videos}</SystemText>;
+
+  if (!videos)
+    return (
+      <VideoList>
+        {Array.from({ length: 4 }).map((_) => (
+          // biome-ignore lint/correctness/useJsxKeyInIterable: Skeleton
+          <VideoCardSkeleton />
+        ))}
+      </VideoList>
+    );
 
   return (
     <VideoList>
