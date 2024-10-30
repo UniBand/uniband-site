@@ -82,14 +82,14 @@ const AboutText = styled.div`
 const Gallery = styled.div`
   margin-top: 4rem;
   margin-bottom: 2rem;
-  padding-inline: var(--body-margins);
+  // padding-inline: var(--body-margins);
 `;
 
 const SliderStyle = styled(Slider)`
   .slick-slide {
     opacity: 0.8;
-    transition: all 300ms ease;
-    transform: scale(0.9);
+    transition: all 1000ms ease;
+    transform: scale(0.95);
   }
 
   .slick-center {
@@ -101,7 +101,6 @@ const SliderStyle = styled(Slider)`
 
 const GalleryImageWrapper = styled.div`
   align-items: center;
-  border-radius: 1rem;
   display: flex;
   height: 50rem;
   justify-content: center;
@@ -114,22 +113,19 @@ const GalleryImage = styled.img`
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
-  transition: transform 400ms ease;
-
-  &:hover {
-    transform: scale(0.99);
-  }
 `;
 
 function GalleryComponent() {
   const settings = {
+    arrows: false,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 2000,
     centerMode: true,
     infinite: true,
     slidesToShow: 1,
-    speed: 500,
-    arrows: false,
+    speed: 1000,
+    variableWidth: true,
+    pauseOnHover: true,
   };
 
   return (
