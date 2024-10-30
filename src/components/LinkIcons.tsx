@@ -22,16 +22,32 @@ const LinkIconsStyled = styled.div`
 export default function LinkIcons() {
   return (
     <LinkIconsStyled>
-      <a href="https://www.instagram.com/uoa_uniband">
+      <a
+        href="https://www.instagram.com/uoa_uniband"
+        target="_blank"
+        rel="noreferrer"
+      >
         <InstagramIcon />
       </a>
-      <a href="https://www.facebook.com/UniBandNZ">
+      <a
+        href="https://www.facebook.com/UniBandNZ"
+        target="_blank"
+        rel="noreferrer"
+      >
         <FacebookIcon />
       </a>
-      <a href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw">
+      <a
+        href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw"
+        target="_blank"
+        rel="noreferrer"
+      >
         <YouTube />
       </a>
-      <a href="https://givealittle.co.nz/org/uniband">
+      <a
+        href="https://givealittle.co.nz/org/uniband"
+        target="_blank"
+        rel="noreferrer"
+      >
         <Givealittle />
       </a>
       <a href="mailto:info@uniband.nz">

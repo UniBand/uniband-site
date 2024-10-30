@@ -40,7 +40,11 @@ export default function Videos() {
       <SpacedTitle>Videos</SpacedTitle>
       <ButtonWrap>
         <YouTubeButton>
-          <a href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw">
+          <a
+            href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw"
+            target="_blank"
+            rel="noreferrer"
+          >
             Find us on YouTube
           </a>
         </YouTubeButton>

@@ -100,7 +100,13 @@ function VideoCard({ video }: { video: YoutubeVideo }) {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       />
       <VideoTitle>
-        <a href={`https://youtu.be/${video.id.videoId}`}>{title}</a>
+        <a
+          href={`https://youtu.be/${video.id.videoId}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {title}
+        </a>
       </VideoTitle>
     </VideoCardStyle>
   );

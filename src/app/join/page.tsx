@@ -82,7 +82,11 @@ export default function Join() {
           >
             Loading…
           </JoinForm>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform"
+            target="_blank"
+            rel="noreferrer"
+          >
             <JoinFormButton>
               <OpenInNewRounded />
             </JoinFormButton>
