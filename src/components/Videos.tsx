@@ -4,9 +4,9 @@ import config from "@/app/config/config";
 import styled from "styled-components";
 import { decodeHTMLEntities } from "./components";
 import { Skeleton } from "@mui/material";
+import { UniBandConfig } from "@/config";
 
 const API_KEY = config.youtube.apiKey;
-const CHANNEL_ID = config.youtube.channelId;
 
 interface YoutubeVideo {
   id: { videoId: string };
@@ -67,7 +67,7 @@ const fetchVideos = () => {
 
           const response = await gapi.client.youtube.search.list({
             part: "snippet",
-            channelId: CHANNEL_ID,
+            channelId: UniBandConfig.youTubeChannelId,
             maxResults: 100,
             order: "date",
             type: "video",

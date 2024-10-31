@@ -1,7 +1,9 @@
 "use client";
 
 import { SpacedTitle } from "@/components/atomic";
-import { BodyContent, UniBandText } from "@/components/components";
+import { BodyContent } from "@/components/components";
+import { ConfigText } from "@/components/ConfigText";
+import { UniBandConfig } from "@/config";
 import { OpenInNewRounded } from "@mui/icons-material";
 import styled from "styled-components";
 
@@ -54,39 +56,16 @@ export default function Join() {
       <SpacedTitle>Join Us</SpacedTitle>
       <ContentContainer>
         <JoinText>
-          <p>
-            <UniBandText /> is open to all students studying in the{" "}
-            <b>University of Auckland</b> and <b>AUT</b>. No audition required!
-          </p>
-          <p>
-            As a concert band, we are always looking for musicians playing{" "}
-            <b>woodwind</b>, <b>brass</b>, and <b>percussion</b> instruments.
-          </p>
-          <p>
-            We rehearse every <b>Thursday</b> from <b>7pm</b> to <b>9pm</b> at
-            the University of Auckland <b>School of Music</b> during the
-            university semester.
-          </p>
-          <p>
-            If you have any questions, feel free to{" "}
-            <a href="/contact">contact us</a>!
-          </p>
+          <ConfigText text={UniBandConfig.text.join.joinText} />
         </JoinText>
         <FormBlock>
           <JoinForm
-            src={
-              "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform" +
-              "?embedded=true"
-            }
+            src={`${UniBandConfig.signUpForm}?embedded=true`}
             title="UniBand Sign-up Form"
           >
             Loading…
           </JoinForm>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={UniBandConfig.signUpForm} target="_blank" rel="noreferrer">
             <JoinFormButton>
               <OpenInNewRounded />
             </JoinFormButton>

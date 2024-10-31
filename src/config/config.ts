@@ -7,14 +7,18 @@ export const UniBandConfig = {
 
   signUpForm: "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform",
 
+  youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw",
+
+  // For multi-line text, use an array of strings, like so: ["Line 1", "Line 2"]
   // Any of the variables set above can be referenced in text like "Email us at ${email}!"
   // Wrap text in ** for bold like "This is **bold** text."
+  // Wrap text in []() for links like "Visit [our website](https://example.com)."
 
   text: {
     home: {
       subtitle: "Auckland’s top tertiary-level Concert Band",
       infoHeader:
-        "UniBand is the University of Auckland’s leading Concert Band",
+        "**UniBand** is the University of Auckland’s leading Concert Band",
       infoContent: [
         "UniBand provides an opportunity for wind, brass, and percussion musicians from all across the university to come together and make music.",
         "We rehearse weekly on Thursday evenings and perform in concerts and competitions throughout the year.",
@@ -22,7 +26,7 @@ export const UniBandConfig = {
     },
     about: {
       aboutText: [
-        "UniBand is a student-founded and student-run concert band in Auckland. Founded in 2013, UniBand has been providing university students an opportunity to play challenging, yet fulfilling music with peers.",
+        "**UniBand** is a student-founded and student-run concert band in Auckland. Founded in 2013, UniBand has been providing university students an opportunity to play challenging, yet fulfilling music with peers.",
         "Unlike most other university music groups which strongly prioritise students studying Music, UniBand is an all-comers band; open to musicians studying any degree, with many members studying degrees such as Engineering and Law.",
         "UniBand performs at a variety of events throughout the year, including self-hosted concerts, university events, and the annual NZCBA Concert Band Festival.",
         "The heart of UniBand is the tight social community at its core. With a welcoming social environment and multiple casual events throughout the year, members form lasting friendships and connections.",

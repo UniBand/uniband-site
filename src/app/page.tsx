@@ -1,7 +1,7 @@
 "use client";
 
 import { Title } from "@/components/atomic";
-import { HighlightImage, UniBandText } from "@/components/components";
+import { HighlightImage } from "@/components/components";
 import LinkIcons from "@/components/LinkIcons";
 import styled from "styled-components";
 import Slider from "react-slick";
@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { UniBandConfig } from "@/config";
 import { useEffect, useState } from "react";
+import { ConfigText } from "@/components/ConfigText";
 
 const TitleBlock = styled.div`
   padding-block: 10rem;
@@ -171,11 +172,13 @@ function GalleryComponent() {
 }
 
 export default function Home() {
+  const configText = UniBandConfig.text.home;
+
   return (
     <>
       <TitleBlock>
         <Title fontSize="9rem">UniBand</Title>
-        <p>Auckland’s top tertiary-level Concert Band</p>
+        <ConfigText text={configText.subtitle} />
         <JoinButton>
           <a href="/join">Join the band</a>
         </JoinButton>
@@ -186,19 +189,8 @@ export default function Home() {
           alt="UniBand at the NZCBA Concert Band Festival 2024"
         />
         <AboutText>
-          <h2>
-            <UniBandText b /> is the University of Auckland’s leading Concert
-            Band
-          </h2>
-          <p>
-            <UniBandText /> provides an opportunity for wind, brass, and
-            percussion musicians from all across the university to come together
-            and make music.
-          </p>
-          <p>
-            We rehearse weekly on Thursday evenings and perform in concerts and
-            competitions throughout the year.
-          </p>
+          <ConfigText text={configText.infoHeader} wrapper="h2" />
+          <ConfigText text={configText.infoContent} />
           <AboutUsButton>
             <a href="/about">Learn more</a>
           </AboutUsButton>

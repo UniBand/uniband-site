@@ -2,9 +2,10 @@
 
 import { Title, SpacedTitle } from "@/components/atomic";
 import styled from "styled-components";
-import { HighlightImage, UniBandText } from "@/components/components";
+import { HighlightImage } from "@/components/components";
 import { PeopleList } from "@/components/People";
-import { UniBandCommittee } from "@/config";
+import { UniBandCommittee, UniBandConfig } from "@/config";
+import { ConfigText } from "@/components/ConfigText";
 
 const ContentContainer = styled.div`
   display: flex;
@@ -66,34 +67,7 @@ export default function About() {
         <Blurb>
           <HighlightImage src="about/blurb-img.jpg" alt="UniBand performing" />
           <BlurbContent>
-            <p>
-              <UniBandText b /> is a student-founded and student-run concert
-              band in Auckland. Founded in 2013,{" "}
-              <UniBandText fontWeight={400} /> has been providing university
-              students an opportunity to play challenging, yet fulfilling music
-              with peers.
-            </p>
-            <p>
-              Unlike most other university music groups which strongly
-              prioritise students studying Music, <UniBandText /> is an
-              all-comers band; open to musicians studying any degree, with many
-              members studying degrees such as Engineering and Law.
-            </p>
-            <p>
-              <UniBandText /> performs at a variety of events throughout the
-              year, including self-hosted concerts, university events, and the
-              annual NZCBA Concert Band Festival.
-            </p>
-            <p>
-              The heart of <UniBandText /> is the tight social community at its
-              core. With a welcoming social environment and multiple casual
-              events throughout the year, members form lasting friendships and
-              connections.
-            </p>
-            <p>
-              Rehearsals are held weekly on Thursdays evenings from 7-9pm on
-              campus during the University of Auckland semester.
-            </p>
+            <ConfigText text={UniBandConfig.text.about.aboutText} />
           </BlurbContent>
         </Blurb>
         <People>
@@ -105,7 +79,10 @@ export default function About() {
           <PeopleList people={generalCommittee} />
         </People>
         <Director>
-          <HighlightImage src="about/people/jono.jpg" alt="Jono Palmer" />
+          <HighlightImage
+            src={director.person.image}
+            alt={director.person.name}
+          />
           <div>
             <h1>{director.person.name}</h1>
             <h2>{director.person.role}</h2>

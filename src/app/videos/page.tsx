@@ -2,6 +2,7 @@
 
 import { SpacedTitle } from "@/components/atomic";
 import VideosComponent from "@/components/Videos";
+import { UniBandConfig } from "@/config";
 import styled from "styled-components";
 
 const VideoContainer = styled.div`
@@ -41,7 +42,7 @@ export default function Videos() {
       <ButtonWrap>
         <YouTubeButton>
           <a
-            href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw"
+            href={`https://www.youtube.com/channel/${UniBandConfig.youTubeChannelId}`}
             target="_blank"
             rel="noreferrer"
           >
