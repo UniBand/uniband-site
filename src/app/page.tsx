@@ -154,13 +154,13 @@ function GalleryComponent() {
   return (
     <Gallery>
       <SliderStyle {...settings}>
-        {files.map((i) => (
-          <div key={i}>
+        {files.map((filePath, i) => (
+          <div key={filePath}>
             <GalleryImageWrapper>
               <GalleryImage
-                key={i}
-                src={`/${UniBandConfig.galleryPath}/${i}`}
-                alt={i}
+                key={filePath}
+                src={`/${UniBandConfig.galleryPath}/${filePath}`}
+                alt={`Gallery image ${i + 1}`}
               />
             </GalleryImageWrapper>
           </div>
