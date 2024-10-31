@@ -33,13 +33,15 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
       const variableElement = getVariable(variableKey);
       elements.push(variableElement ?? `${variableKey}`);
     }
-    // Handle `**bold**`
+    // Handle `**bold**`, parse its content for nested patterns
     else if (boldText) {
-      elements.push(<b key={offset}>{boldText}</b>);
+      const nestedElements = parseTextToElements(boldText); // Recursively parse bold text
+      elements.push(<b key={offset}>{nestedElements}</b>);
     }
-    // Handle `[text](link)`
+    // Handle `[text](link)`, parse link text for nested patterns
     else if (linkText && url) {
       const isExternal = !url.startsWith(window.location.origin);
+      const nestedLinkText = parseTextToElements(linkText); // Recursively parse link text
       elements.push(
         <a
           key={offset}
@@ -47,7 +49,7 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noreferrer" : undefined}
         >
-          {linkText}
+          {nestedLinkText}
         </a>
       );
     }
