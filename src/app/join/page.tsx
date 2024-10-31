@@ -56,7 +56,7 @@ export default function Join() {
       <SpacedTitle>Join Us</SpacedTitle>
       <ContentContainer>
         <JoinText>
-          <ConfigText text={UniBandConfig.text.join.joinText} />
+          <ConfigText text={UniBandConfig.join.joinText} />
         </JoinText>
         <FormBlock>
           <JoinForm

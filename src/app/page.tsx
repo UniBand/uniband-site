@@ -172,7 +172,7 @@ function GalleryComponent() {
 }
 
 export default function Home() {
-  const configText = UniBandConfig.text.home;
+  const configText = UniBandConfig.home;
 
   return (
     <>

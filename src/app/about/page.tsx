@@ -67,7 +67,7 @@ export default function About() {
         <Blurb>
           <HighlightImage src="about/blurb-img.jpg" alt="UniBand performing" />
           <BlurbContent>
-            <ConfigText text={UniBandConfig.text.about.aboutText} />
+            <ConfigText text={UniBandConfig.about.aboutText} />
           </BlurbContent>
         </Blurb>
         <People>

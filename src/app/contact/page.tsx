@@ -4,6 +4,8 @@ import { SpacedTitle } from "@/components/atomic";
 import config from "../config/config";
 import styled from "styled-components";
 import { BodyContent } from "@/components/components";
+import { ConfigText } from "@/components/ConfigText";
+import { UniBandConfig } from "@/config";
 
 const ContentContainer = styled(BodyContent)`
   display: grid;
@@ -41,7 +43,7 @@ export default function Contact() {
           src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqQRRxuJHDW0RYUGEgrXeH1E&key=${config.googleMapsApi.key}`}
         />
         <ContactText>
-          <p>
+          {/* <p>
             You can contact us by sending an email to{" "}
             <b>
               <a href="mailto:info@uniband.nz">info@uniband.nz</a>
@@ -50,7 +52,8 @@ export default function Contact() {
           <p>
             You can also find us at the <b>School of Music</b> in the University
             of Auckland (6 Symonds Street, Auckland 1010).
-          </p>
+          </p> */}
+          <ConfigText text={UniBandConfig.contact.contactText} />
         </ContactText>
       </ContentContainer>
     </>

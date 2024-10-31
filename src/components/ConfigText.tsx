@@ -5,7 +5,7 @@ import { ElementType } from "react";
 function getVariable(key: string): JSX.Element | string | undefined {
   if (key === "email") {
     const email = UniBandConfig.email;
-    return <a href={`mailto:${email}`}>email</a>;
+    return <a href={`mailto:${email}`}>{email}</a>;
   }
   const variable = UniBandConfig[key as keyof typeof UniBandConfig];
   if (variable && typeof variable === "string") {
