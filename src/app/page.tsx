@@ -7,6 +7,8 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { UniBandConfig } from "@/config";
+import { useEffect, useState } from "react";
 
 const TitleBlock = styled.div`
   padding-block: 10rem;
@@ -128,17 +130,37 @@ function GalleryComponent() {
     pauseOnHover: true,
   };
 
+  // const imagesDirectory = path.join(process.cwd(), UniBandConfig.galleryPath);
+  const [files, setFiles] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchFiles = async () => {
+      try {
+        const response = await fetch("/api/files");
+        if (!response.ok) {
+          throw new Error("Failed to fetch files");
+        }
+        const data: string[] = await response.json();
+        data.sort(() => Math.random() - 0.5);
+        setFiles(data);
+      } catch (error) {
+        console.error("Error fetching files:", error);
+      }
+    };
+
+    fetchFiles();
+  }, []);
+
   return (
     <Gallery>
       <SliderStyle {...settings}>
-        {Array.from({ length: 10 }).map((_, i) => (
-          // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
-          <div>
+        {files.map((i) => (
+          <div key={i}>
             <GalleryImageWrapper>
               <GalleryImage
                 key={i}
-                src="img/2024-nzcba-fun.jpg"
-                alt="UniBand at the NZCBA Concert Band Festival 2024"
+                src={`/${UniBandConfig.galleryPath}/${i}`}
+                alt={i}
               />
             </GalleryImageWrapper>
           </div>
