@@ -17,7 +17,6 @@ export const UniBandConfig = {
         "UniBand is the University of Auckland’s leading Concert Band",
       infoContent: [
         "UniBand provides an opportunity for wind, brass, and percussion musicians from all across the university to come together and make music.",
-        "",
         "We rehearse weekly on Thursday evenings and perform in concerts and competitions throughout the year.",
       ],
     },

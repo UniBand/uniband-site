@@ -1,5 +1,6 @@
 import { UniBandConfig } from "@/config";
 import { UniBandText } from "./components";
+import { ElementType } from "react";
 
 function getVariable(key: string): JSX.Element | string | undefined {
   if (key === "email") {
@@ -68,12 +69,30 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
   return elements;
 }
 
-export function ConfigText({ text }: { text: string | string[] }) {
-  if (Array.isArray(text)) {
-    text = text.join("\n");
+interface ConfigTextProps {
+  text: string | string[];
+  wrapper?: ElementType;
+}
+
+export function ConfigText({ text, wrapper: Wrapper = "p" }: ConfigTextProps) {
+  // Ensure text is a single string if it's an array
+  const isArray = Array.isArray(text);
+
+  // Parse text based on whether it's an array or single string
+  const parsedText = isArray
+    ? (text as string[]).map((t) => parseTextToElements(t))
+    : parseTextToElements(text as string);
+
+  // Render based on if `text` is an array
+  if (isArray) {
+    return (
+      <>
+        {(parsedText as (string | JSX.Element)[][]).map((content, index) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: doesn't matter for this
+          <Wrapper key={index}>{content}</Wrapper>
+        ))}
+      </>
+    );
   }
-
-  const parsedText = parseTextToElements(text);
-
-  return <>{parsedText}</>;
+  return <Wrapper>{parsedText}</Wrapper>;
 }
