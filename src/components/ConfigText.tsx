@@ -16,32 +16,27 @@ function getVariable(key: string): JSX.Element | string | undefined {
 
 function parseTextToElements(text: string): (string | JSX.Element)[] {
   const elements: (string | JSX.Element)[] = [];
-
-  // Regex for matching `${variable}`, bold `**text**`, `[text](link)`, and "UniBand"
   const regex =
-    /\$\{(\w+)\}|\*\*(.+?)\*\*|\[(.+?)\]\((https?:\/\/[^\)]+)\)|UniBand/g;
+    /\$\{(\w+)\}|\*\*(.+?)\*\*|\[(.+?)\]\((\/[^\)]+|https?:\/\/[^\)]+)\)|UniBand/g;
   let lastIndex = 0;
 
-  text.replace(regex, (match, variableKey, boldText, linkText, url, offset) => {
-    // Add any text before this match as a string
-    if (lastIndex < offset) {
-      elements.push(text.slice(lastIndex, offset));
+  const addTextSegment = (start: number, end: number) => {
+    if (lastIndex < start) {
+      elements.push(text.slice(lastIndex, start));
     }
+    lastIndex = end;
+  };
 
-    // Handle `${variable}`
+  text.replace(regex, (match, variableKey, boldText, linkText, url, offset) => {
+    addTextSegment(offset, offset + match.length);
+
     if (variableKey) {
       const variableElement = getVariable(variableKey);
-      elements.push(variableElement ?? `${variableKey}`);
-    }
-    // Handle `**bold**`, parse its content for nested patterns
-    else if (boldText) {
-      const nestedElements = parseTextToElements(boldText); // Recursively parse bold text
-      elements.push(<b key={offset}>{nestedElements}</b>);
-    }
-    // Handle `[text](link)`, parse link text for nested patterns
-    else if (linkText && url) {
-      const isExternal = !url.startsWith(window.location.origin);
-      const nestedLinkText = parseTextToElements(linkText); // Recursively parse link text
+      elements.push(variableElement ?? variableKey);
+    } else if (boldText) {
+      elements.push(<b key={offset}>{parseTextToElements(boldText)}</b>);
+    } else if (linkText && url) {
+      const isExternal = /^https?:\/\//.test(url);
       elements.push(
         <a
           key={offset}
@@ -49,21 +44,16 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noreferrer" : undefined}
         >
-          {nestedLinkText}
+          {parseTextToElements(linkText)}
         </a>
       );
-    }
-    // Handle "UniBand" replacement
-    else if (match === "UniBand") {
+    } else if (match === "UniBand") {
       elements.push(<UniBandText key={offset} />);
     }
 
-    // Update last index to end of the current match
-    lastIndex = offset + match.length;
     return ""; // `replace` expects a return value
   });
 
-  // Add any remaining text after the last match
   if (lastIndex < text.length) {
     elements.push(text.slice(lastIndex));
   }
