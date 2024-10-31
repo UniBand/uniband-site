@@ -173,6 +173,7 @@ function GalleryComponent() {
 
 export default function Home() {
   const configText = UniBandConfig.home;
+  const infoImage = UniBandConfig.home.infoImage;
 
   return (
     <>
@@ -184,10 +185,7 @@ export default function Home() {
         </JoinButton>
       </TitleBlock>
       <About>
-        <HighlightImage
-          src="img/2024-nzcba-fun.jpg"
-          alt="UniBand at the NZCBA Concert Band Festival 2024"
-        />
+        <HighlightImage src={infoImage.path} alt={infoImage.alt} />
         <AboutText>
           <ConfigText text={configText.infoHeader} wrapper="h2" />
           <ConfigText text={configText.infoContent} />

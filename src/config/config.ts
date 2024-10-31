@@ -1,3 +1,8 @@
+interface ConfigImage {
+  path: string;
+  alt: string;
+}
+
 export const UniBandConfig = {
   // Path is public/[galleryPath]/, e.g. public/gallery/ => galleryPath: "gallery"
   // Try to not go overboard with the number of images in the gallery! More images = more data for users to load when they visit the site. One or two dozen should be fine.
@@ -22,6 +27,10 @@ export const UniBandConfig = {
       "UniBand provides an opportunity for wind, brass, and percussion musicians from all across the university to come together and make music.",
       "We rehearse weekly on Thursday evenings and perform in concerts and competitions throughout the year.",
     ],
+    infoImage: {
+      path: "img/2024-nzcba-fun.jpg",
+      alt: "UniBand at the NZCBA Concert Band Festival 2024",
+    } as ConfigImage,
   },
   about: {
     aboutText: [
@@ -31,6 +40,10 @@ export const UniBandConfig = {
       "The heart of UniBand is the tight social community at its core. With a welcoming social environment and multiple casual events throughout the year, members form lasting friendships and connections.",
       "Rehearsals are held weekly on Thursdays evenings from 7-9pm on campus during the University of Auckland semester.",
     ],
+    aboutImage: {
+      path: "about/blurb-img.jpg",
+      alt: "UniBand performing",
+    } as ConfigImage,
   },
   contact: {
     contactText: [

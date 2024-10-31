@@ -59,13 +59,14 @@ const Director = styled.div`
 
 export default function About() {
   const { executiveCommittee, generalCommittee, director } = UniBandCommittee;
+  const aboutImage = UniBandConfig.about.aboutImage;
 
   return (
     <>
       <SpacedTitle>About</SpacedTitle>
       <ContentContainer>
         <Blurb>
-          <HighlightImage src="about/blurb-img.jpg" alt="UniBand performing" />
+          <HighlightImage src={aboutImage.path} alt={aboutImage.alt} />
           <BlurbContent>
             <ConfigText text={UniBandConfig.about.aboutText} />
           </BlurbContent>
