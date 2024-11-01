@@ -75,9 +75,19 @@ const AboutText = styled.div`
 const Gallery = styled.div`
   margin-top: 4rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 1200px) {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+  }
 `;
 
 const SliderStyle = styled(Slider)`
+  .slick-track,
+  .slick-list {
+    height: clamp(0px, 30rem, min(80vh, 50rem));
+  }
+
   .slick-slide {
     opacity: 0.8;
     transition: all 1000ms ease;
