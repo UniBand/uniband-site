@@ -12,6 +12,10 @@ const PeopleListStyle = styled.div`
   gap: 5rem;
   justify-content: center;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
 `;
 
 const ProfileStyle = styled.div`

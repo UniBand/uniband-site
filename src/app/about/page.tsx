@@ -19,6 +19,11 @@ const Blurb = styled.div`
   gap: 2rem;
   grid-template-columns: 3fr 2fr;
   padding-inline: var(--body-margins);
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const BlurbContent = styled.div`
@@ -55,6 +60,11 @@ const Director = styled.div`
     font-weight: 400;
     margin-bottom: 1rem;
   }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 export default function About() {
@@ -72,9 +82,15 @@ export default function About() {
           </BlurbContent>
         </Blurb>
         <People>
-          <Title background="var(--background)">Executive Committee</Title>
+          <Title background="var(--background)" responsiveSize="12vw">
+            Executive Committee
+          </Title>
           <PeopleList people={executiveCommittee} />
-          <Title background="var(--background)" fontSize="3rem">
+          <Title
+            background="var(--background)"
+            fontSize="3rem"
+            responsiveSize="10vw"
+          >
             General Committee
           </Title>
           <PeopleList people={generalCommittee} />

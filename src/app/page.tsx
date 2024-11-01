@@ -71,7 +71,7 @@ const About = styled.div`
   padding-block: 2rem;
   padding-inline: var(--body-margins);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     grid-template-columns: 1fr;
   }
 `;
