@@ -35,7 +35,7 @@ const PlayButton = styled.button<PlayButtonProps>`
   cursor: pointer;
   height: 4rem;
   padding: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all 500ms ease;
   width: 4rem;
 
   &:hover {
@@ -63,6 +63,7 @@ interface CurrentlyPlayingProps {
 const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
   font-size: 1.5rem !important;
   font-style: italic;
+  max-width: 75vw;
   opacity: ${({ currentAudio, isFadingOut }) =>
     currentAudio && !isFadingOut ? "0.9" : "0"};
   position: absolute;
@@ -70,9 +71,8 @@ const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
   text-align: right;
   top: 50%;
   transform: translateY(-50%);
-  transition: opacity 0.5s ease;
+  transition: opacity 500ms ease;
   width: max-content;
-  max-width: 75vw;
 `;
 
 interface AudioPlayerProps {
