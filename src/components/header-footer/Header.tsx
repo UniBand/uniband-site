@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import Link from "next/link";
+import { Menu } from "@mui/icons-material";
 
 const StyledHeader = styled.header`
   position: sticky;
@@ -15,7 +16,7 @@ const GradientBackground = styled.div`
   background: var(--blue-gradient);
   box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.15);
   padding-block: 1.5rem;
-  padding-inline: var(--body-margins);
+  padding-inline: var(--header-margins);
   position: relative;
   z-index: 2;
 `;
@@ -25,7 +26,7 @@ const Nav = styled.nav`
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding-block: 1rem;
   position: relative;
   z-index: 10;
 
@@ -63,7 +64,7 @@ const HomeLink = styled.a`
 
   @media (max-width: 1200px) {
     font-size: 0; /* Hides text on mobile */
-    gap: 0; /* Removes extra gap for centering the icon */
+    gap: 0;
   }
 `;
 
@@ -133,12 +134,12 @@ const LinksTray = styled.div<LinksTrayProps>`
       text-align: center;
 
       a {
-        display: block; /* Make the link cover the entire li */
         color: white;
+        display: block;
+        height: 100%;
+        padding: 1rem;
         text-decoration: none;
-        padding: 1rem; /* Add padding to the link */
-        width: 100%; /* Ensure it fills the li */
-        height: 100%; /* Ensure it fills the li */
+        width: 100%;
       }
 
       &:hover {
@@ -149,13 +150,18 @@ const LinksTray = styled.div<LinksTrayProps>`
 `;
 
 const HamburgerButton = styled.button`
+  color: white;
   display: none;
   font-size: 2rem;
-  color: white;
 
   @media (max-width: 1200px) {
     display: block;
   }
+`;
+
+const MenuIcon = styled(Menu)`
+  height: 2.5rem;
+  width: auto;
 `;
 
 export default function Header() {
@@ -178,7 +184,7 @@ export default function Header() {
           <NavHeader>
             <HomeLinkComponent />
             <HamburgerButton onClick={toggleMenu} aria-label="Toggle menu">
-              ☰
+              <MenuIcon />
             </HamburgerButton>
           </NavHeader>
           <LinksList>

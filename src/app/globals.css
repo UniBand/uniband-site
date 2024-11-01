@@ -8,7 +8,7 @@
   --hyperlink: var(--dark-blue);
 
   --body-margins: 10vw;
-  --header-margin: 4rem;
+  --header-margins: var(--body-margins);
 
   --blue-gradient: linear-gradient(40deg, var(--dark-blue), var(--light-blue));
 }
@@ -16,7 +16,7 @@
 @media (max-width: 1200px) {
   :root {
     --body-margins: 5vw;
-    --header-margin: 2rem;
+    --header-margins: 2rem;
   }
 }
 
