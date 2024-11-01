@@ -1,6 +1,6 @@
 "use client";
 
-import { SpacedTitle } from "@/components/atomic";
+import { Button, SpacedTitle } from "@/components/atomic";
 import { BodyContent } from "@/components/components";
 import { ConfigText } from "@/components/ConfigText";
 import { UniBandConfig } from "@/config";
@@ -11,6 +11,12 @@ const ContentContainer = styled(BodyContent)`
   display: grid;
   gap: 2rem;
   grid-template-columns: 2fr 3fr;
+
+  @media (max-width: 1200px) {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
 `;
 
 const JoinText = styled.div`
@@ -27,6 +33,10 @@ const FormBlock = styled.div`
   height: 80vh;
   position: relative;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const JoinForm = styled.iframe`
@@ -50,6 +60,22 @@ const JoinFormButton = styled.button`
   color: var(--hyperlink);
 `;
 
+const MobileFormButton = styled(Button)`
+  display: none;
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+
+  a {
+    color: inherit !important;
+  }
+
+  @media (max-width: 1200px) {
+    display: block;
+  }
+`;
+
 export default function Join() {
   return (
     <>
@@ -71,6 +97,11 @@ export default function Join() {
             </JoinFormButton>
           </a>
         </FormBlock>
+        <MobileFormButton>
+          <a href={UniBandConfig.signUpForm} target="_blank" rel="noreferrer">
+            Sign up here!
+          </a>
+        </MobileFormButton>
       </ContentContainer>
     </>
   );
