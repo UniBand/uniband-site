@@ -6,6 +6,7 @@ import { HighlightImage } from "@/components/components";
 import { PeopleList } from "@/components/People";
 import { UniBandCommittee, UniBandConfig } from "@/config";
 import { ConfigText } from "@/components/ConfigText";
+import logo from "@/assets/logo.png";
 
 const ContentContainer = styled.div`
   display: flex;
@@ -97,7 +98,7 @@ export default function About() {
         </People>
         <Director>
           <HighlightImage
-            src={director.person.image}
+            src={director.person.image || logo.src}
             alt={director.person.name}
           />
           <div>

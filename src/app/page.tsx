@@ -10,11 +10,13 @@ import "slick-carousel/slick/slick-theme.css";
 import { UniBandConfig } from "@/config";
 import { useEffect, useState } from "react";
 import { ConfigText } from "@/components/ConfigText";
+import { AudioPlayer } from "@/components/AudioPlayer";
 
 const TitleBlock = styled.div`
   padding-block: 10rem;
   text-align: center;
   font-stretch: expanded;
+  position: relative;
 
   p {
     font-size: clamp(2vw, 6vw, 2rem);
@@ -42,6 +44,12 @@ const JoinButton = styled.button`
   &:hover {
     transform: scale(1.05);
   }
+`;
+
+const AudioPlayerContainer = styled.div`
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 `;
 
 const About = styled.div`
@@ -182,6 +190,9 @@ export default function Home() {
         <JoinButton>
           <a href="/join">Join the band</a>
         </JoinButton>
+        <AudioPlayerContainer>
+          <AudioPlayer />
+        </AudioPlayerContainer>
       </TitleBlock>
       <About>
         <HighlightImage src={infoImage.path} alt={infoImage.alt} />
