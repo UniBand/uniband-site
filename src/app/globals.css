@@ -8,13 +8,22 @@
   --hyperlink: var(--dark-blue);
 
   --body-margins: 10vw;
+  --header-margin: 4rem;
 
   --blue-gradient: linear-gradient(40deg, var(--dark-blue), var(--light-blue));
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --body-margins: 5vw;
+    --header-margin: 2rem;
+  }
 }
 
 html,
 body {
   max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
