@@ -56,7 +56,6 @@ const PlayIconContainer = styled.div`
 `;
 
 interface CurrentlyPlayingProps {
-  hovered: boolean;
   currentAudio: AudioFile | null;
   isFadingOut: boolean;
 }
@@ -64,8 +63,8 @@ interface CurrentlyPlayingProps {
 const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
   font-size: 1.5rem !important;
   font-style: italic;
-  opacity: ${({ hovered, currentAudio, isFadingOut }) =>
-    hovered && currentAudio && !isFadingOut ? "0.9" : "0"};
+  opacity: ${({ currentAudio, isFadingOut }) =>
+    currentAudio && !isFadingOut ? "0.9" : "0"};
   position: absolute;
   right: calc(100% + 1rem);
   text-align: right;
@@ -78,7 +77,6 @@ const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
 
 export const AudioPlayer = () => {
   const [currentAudio, setCurrentAudio] = useState<AudioFile | null>(null);
-  const [hovered, setHovered] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -111,8 +109,6 @@ export const AudioPlayer = () => {
     <Container>
       <PlayButton
         onClick={playRandomAudio}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
         currentAudio={currentAudio}
         isFadingOut={isFadingOut}
       >
@@ -120,11 +116,7 @@ export const AudioPlayer = () => {
           <MusicNote />
         </PlayIconContainer>
       </PlayButton>
-      <CurrentlyPlaying
-        hovered={hovered}
-        currentAudio={currentAudio}
-        isFadingOut={isFadingOut}
-      >
+      <CurrentlyPlaying currentAudio={currentAudio} isFadingOut={isFadingOut}>
         {currentAudio?.name}
       </CurrentlyPlaying>
     </Container>
