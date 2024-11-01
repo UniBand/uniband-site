@@ -1,3 +1,4 @@
+import { UniBandAudioFiles } from "@/config";
 import { MusicNote } from "@mui/icons-material";
 import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
@@ -7,11 +8,9 @@ interface AudioFile {
   path: string;
 }
 
-const audioFiles: AudioFile[] = [
-  { path: "/audio/folk-dances-1.mp3", name: "Folk Dances" },
-  { path: "/audio/inferno-1.mp3", name: "The Inferno (The Divine Comedy)" },
-  { path: "/audio/october-1.mp3", name: "October" },
-];
+const audioFiles: AudioFile[] = Object.entries(UniBandAudioFiles).flatMap(
+  ([name, paths]) => paths.map((path) => ({ name, path }))
+);
 
 const Container = styled.div`
   position: relative;
