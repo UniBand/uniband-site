@@ -11,6 +11,12 @@ const ContentContainer = styled(BodyContent)`
   display: grid;
   gap: 2rem;
   grid-template-columns: 3fr 2fr;
+
+  @media (max-width: 1200px) {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
 `;
 
 const MapFrame = styled.iframe`
@@ -18,6 +24,10 @@ const MapFrame = styled.iframe`
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   height: 50vh;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    order: 2;
+  }
 `;
 
 const ContactText = styled.div`
@@ -28,6 +38,10 @@ const ContactText = styled.div`
   justify-content: center;
   margin-top: 0.5rem;
   text-align: left;
+
+  @media (max-width: 1200px) {
+    order: 1;
+  }
 `;
 
 export default function Contact() {
@@ -43,16 +57,6 @@ export default function Contact() {
           src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqQRRxuJHDW0RYUGEgrXeH1E&key=${config.googleMapsApi.key}`}
         />
         <ContactText>
-          {/* <p>
-            You can contact us by sending an email to{" "}
-            <b>
-              <a href="mailto:info@uniband.nz">info@uniband.nz</a>
-            </b>
-          </p>
-          <p>
-            You can also find us at the <b>School of Music</b> in the University
-            of Auckland (6 Symonds Street, Auckland 1010).
-          </p> */}
           <ConfigText text={UniBandConfig.contact.contactText} />
         </ContactText>
       </ContentContainer>
