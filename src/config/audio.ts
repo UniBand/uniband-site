@@ -16,7 +16,7 @@ export const UniBandAudioFiles: AudioFiles = {
     "/audio/2024-second-suite-1-1.mp3",
     "/audio/2024-second-suite-1-2.mp3",
   ],
-  "Song without words \"I'll love my Love\" (Holst's Second Suite)": [
+  "Song Without Words, 'I'll Love My Love' (Holst's Second Suite)": [
     "/audio/2024-second-suite-2-1.mp3",
     "/audio/2024-second-suite-2-2.mp3",
   ],
@@ -24,7 +24,7 @@ export const UniBandAudioFiles: AudioFiles = {
     "/audio/2024-second-suite-3-1.mp3",
     "/audio/2024-second-suite-3-2.mp3",
   ],
-  "Fantasia on the \"Dargason\" (Holst's Second Suite)": [
+  "Fantasia on the Dargason (Holst's Second Suite)": [
     "/audio/2024-second-suite-4-1.mp3",
     "/audio/2024-second-suite-4-2.mp3",
   ],
