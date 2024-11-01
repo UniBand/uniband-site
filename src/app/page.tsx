@@ -59,7 +59,7 @@ const About = styled.div`
   display: grid;
   gap: 2rem;
   grid-template-columns: 60% auto;
-  padding-block: 2rem;
+  padding-block: 4rem;
   padding-inline: var(--body-margins);
 
   @media (max-width: 1200px) {

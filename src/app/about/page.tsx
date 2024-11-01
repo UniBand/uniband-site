@@ -19,6 +19,7 @@ const Blurb = styled.div`
   font-size: 1.5rem;
   gap: 2rem;
   grid-template-columns: 3fr 2fr;
+  margin-bottom: 2rem;
   padding-inline: var(--body-margins);
 
   @media (max-width: 1200px) {
@@ -51,6 +52,7 @@ const Director = styled.div`
   display: grid;
   gap: 2rem;
   grid-template-columns: 3fr 2fr;
+  margin-block: 2rem;
 
   h1 {
     font-size: 4rem;
