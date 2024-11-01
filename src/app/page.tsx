@@ -112,10 +112,11 @@ const SliderStyle = styled(Slider)`
 const GalleryImageWrapper = styled.div`
   align-items: center;
   display: flex;
-  height: 50rem;
+  height: clamp(0px, 30rem, min(80vh, 50rem));
   justify-content: center;
   overflow: hidden;
   width: 100%;
+  max-width: 80vw;
 `;
 
 const GalleryImage = styled.img`
