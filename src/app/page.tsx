@@ -1,6 +1,6 @@
 "use client";
 
-import { Title } from "@/components/atomic";
+import { Button, Title } from "@/components/atomic";
 import { HighlightImage } from "@/components/components";
 import LinkIcons from "@/components/LinkIcons";
 import styled from "styled-components";
@@ -41,24 +41,6 @@ const JoinButton = styled.button`
 
   &:hover {
     transform: scale(1.05);
-  }
-`;
-
-const AboutUsButton = styled.button`
-  background: var(--dark-blue);
-  border-radius: 0.5rem;
-  border: var(--background) 2px solid;
-  color: var(--background);
-  cursor: pointer;
-  font-size: 1.25rem;
-  font-stretch: expanded;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
-  transition: background 400ms ease, color 400ms ease;
-
-  &:hover {
-    background: var(--background);
-    color: var(--dark-blue);
   }
 `;
 
@@ -196,9 +178,9 @@ export default function Home() {
         <AboutText>
           <ConfigText text={configText.infoHeader} wrapper="h2" />
           <ConfigText text={configText.infoContent} />
-          <AboutUsButton>
+          <Button background="var(--dark-blue)" color="var(--background)">
             <a href="/about">Learn more</a>
-          </AboutUsButton>
+          </Button>
           <LinkIcons />
         </AboutText>
       </About>
