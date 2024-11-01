@@ -113,11 +113,13 @@ interface LinksTrayProps {
 
 const LinksTray = styled.div<LinksTrayProps>`
   background-color: var(--dark-blue);
+  box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   left: 0;
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")}; /* Fade effect */
   overflow: hidden;
+  pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
   position: absolute;
   right: 0;
   top: 100%;
