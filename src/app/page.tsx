@@ -17,8 +17,12 @@ const TitleBlock = styled.div`
   font-stretch: expanded;
 
   p {
-    font-size: 2rem;
+    font-size: clamp(2vw, 6vw, 2rem);
   }
+`;
+
+const TitleText = styled(Title)`
+  font-size: clamp(10vw, 20vw, 9rem);
 `;
 
 const JoinButton = styled.button`
@@ -66,6 +70,10 @@ const About = styled.div`
   grid-template-columns: 60% auto;
   padding-block: 2rem;
   padding-inline: var(--body-margins);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const AboutText = styled.div`
@@ -85,7 +93,6 @@ const AboutText = styled.div`
 const Gallery = styled.div`
   margin-top: 4rem;
   margin-bottom: 2rem;
-  // padding-inline: var(--body-margins);
 `;
 
 const SliderStyle = styled(Slider)`
@@ -131,7 +138,6 @@ function GalleryComponent() {
     pauseOnHover: true,
   };
 
-  // const imagesDirectory = path.join(process.cwd(), UniBandConfig.galleryPath);
   const [files, setFiles] = useState<string[]>([]);
 
   useEffect(() => {
@@ -178,7 +184,7 @@ export default function Home() {
   return (
     <>
       <TitleBlock>
-        <Title fontSize="9rem">UniBand</Title>
+        <TitleText>UniBand</TitleText>
         <ConfigText text={configText.subtitle} />
         <JoinButton>
           <a href="/join">Join the band</a>
