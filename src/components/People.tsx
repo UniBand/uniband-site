@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import logo from "@/assets/logo.png";
 
 export interface Person {
   name: string;
-  role: string;
-  image: string;
+  role?: string;
+  image?: string;
   email?: string;
 }
 
@@ -55,11 +56,14 @@ function Profile({
   email,
   size = "15rem",
 }: Person & { size?: string }) {
+  const imageAlt = image ? name : "Default profile image";
+  image = image || logo.src;
+
   const content = (
     <ProfileStyle>
-      <ProfileImage src={image} alt={name} size={size} />
+      <ProfileImage src={image} alt={imageAlt} size={size} />
       <h1>{name}</h1>
-      <h2>{role}</h2>
+      {role && <h2>{role}</h2>}
     </ProfileStyle>
   );
 

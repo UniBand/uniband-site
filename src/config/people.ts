@@ -5,7 +5,7 @@ interface directorProps {
   text: string,
 };
 
-// Name, role, and image are required. Email is optional.
+// Name is required.  Role, image, and email are optional.
 // Order on the page is determined by the order in the list below.
 
 const executiveCommittee: Person[] = [
