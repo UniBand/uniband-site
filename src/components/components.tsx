@@ -32,7 +32,6 @@ export function HighlightImage({ src, alt }: HighlightImageProps) {
 
 export const BodyContent = styled.div`
   align-items: start;
-  margin-top: 2rem;
   padding-inline: var(--body-margins);
 
   b {

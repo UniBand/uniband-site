@@ -1,6 +1,7 @@
 "use client";
 
 import { SpacedTitle, Title } from "@/components/atomic";
+import { BodyContent } from "@/components/components";
 import {
   Event,
   EventComponent,
@@ -9,11 +10,16 @@ import {
 import { UniBandEvents } from "@/config";
 import styled from "styled-components";
 
+const EventsContent = styled(BodyContent)`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
 const EventsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding-inline: var(--body-margins);
-  margin-top: 2rem;
 `;
 
 const HorizontalLine = styled.hr`
@@ -21,6 +27,10 @@ const HorizontalLine = styled.hr`
   border-top: 1px solid var(--foreground);
   margin-block: 3rem;
   opacity: 0.1;
+
+  @media (max-width: 1200px) {
+    margin-block: 2rem;
+  }
 `;
 
 const EmptyEvents = styled.p`
@@ -65,19 +75,25 @@ export default function Events() {
     <>
       <SpacedTitle>Events</SpacedTitle>
 
-      {currentEvents.length > 0 ? (
-        <EventsList events={currentEvents} />
-      ) : (
-        <EmptyEvents>
-          Keep an eye out for more events in the future!
-        </EmptyEvents>
-      )}
+      <EventsContent>
+        {currentEvents.length > 0 ? (
+          <EventsList events={currentEvents} />
+        ) : (
+          <EmptyEvents>
+            Keep an eye out for more events in the future!
+          </EmptyEvents>
+        )}
 
-      <Title fontSize="4rem" background="var(--dark-blue)">
-        Past Events
-      </Title>
+        <Title
+          fontSize="4rem"
+          background="var(--dark-blue)"
+          responsiveSize="12vw"
+        >
+          Past Events
+        </Title>
 
-      <EventsList events={pastEvents} />
+        <EventsList events={pastEvents} />
+      </EventsContent>
     </>
   );
 }

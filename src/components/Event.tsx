@@ -25,11 +25,20 @@ const EventContainer = styled.div`
   flex-direction: row;
   gap: 2rem;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const EventImage = styled.div`
   max-height: 750px;
   width: 40%;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const EventContents = styled.div`
@@ -48,8 +57,8 @@ const EventDetails = styled.p`
   font-size: 1.5rem;
   font-style: italic;
 
-  a:hover {
-    text-decoration: underline;
+  a {
+    color: var(--foreground) !important;
   }
 `;
 
@@ -61,6 +70,10 @@ const Urls = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+
+  @media (max-width: 1200px) {
+    margin-top: 0rem;
+  }
 `;
 
 const UrlButtonStyled = styled.a`
@@ -85,6 +98,11 @@ const YouTubeEmbedContainer = styled.div`
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   margin-top: 1rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 `;
 
 const YouTubeEmbedStyle = styled.iframe`
@@ -92,6 +110,7 @@ const YouTubeEmbedStyle = styled.iframe`
   border: none;
   height: 100%;
   width: 100%;
+  max-width: 60vw;
   border-radius: 1rem;
 `;
 
@@ -103,6 +122,11 @@ const Countdown = styled.p`
   margin-top: 1rem;
   opacity: 0.4;
   padding-left: 1rem;
+
+  @media (max-width: 1200px) {
+    font-size: 3rem;
+    margin-top: 0rem;
+  }
 `;
 
 function UrlButton({ url }: { url: Url }) {
