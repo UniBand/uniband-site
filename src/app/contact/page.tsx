@@ -47,7 +47,7 @@ const ContactText = styled.div`
 export default function Contact() {
   return (
     <>
-      <SpacedTitle>Contact Us</SpacedTitle>
+      <SpacedTitle>Contact</SpacedTitle>
       <ContentContainer>
         <MapFrame
           style={{ border: 0 }}
