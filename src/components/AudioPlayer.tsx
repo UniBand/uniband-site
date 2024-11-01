@@ -3,7 +3,7 @@ import { MusicNote } from "@mui/icons-material";
 import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
-interface AudioFile {
+export interface AudioFile {
   name: string;
   path: string;
 }
@@ -72,11 +72,18 @@ const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
   transform: translateY(-50%);
   transition: opacity 0.5s ease;
   width: max-content;
-  max-width: 80vw;
+  max-width: 75vw;
 `;
 
-export const AudioPlayer = () => {
-  const [currentAudio, setCurrentAudio] = useState<AudioFile | null>(null);
+interface AudioPlayerProps {
+  currentAudio: AudioFile | null;
+  setCurrentAudio: (audio: AudioFile | null) => void;
+}
+
+export const AudioPlayer: React.FC<AudioPlayerProps> = ({
+  currentAudio,
+  setCurrentAudio,
+}) => {
   const [isFadingOut, setIsFadingOut] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -95,6 +102,7 @@ export const AudioPlayer = () => {
     audio.play();
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: no ty
   useEffect(() => {
     if (isFadingOut) {
       const fadeOutTimeout = setTimeout(() => {

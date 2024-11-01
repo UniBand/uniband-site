@@ -10,7 +10,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { UniBandConfig } from "@/config";
 import { useEffect, useState } from "react";
 import { ConfigText } from "@/components/ConfigText";
-import { AudioPlayer } from "@/components/AudioPlayer";
+import { AudioFile, AudioPlayer } from "@/components/AudioPlayer";
+import FloatingPNGs from "@/components/FloatingPNGs";
 
 const TitleBlock = styled.div`
   padding-block: 10rem;
@@ -182,6 +183,8 @@ export default function Home() {
   const configText = UniBandConfig.home;
   const infoImage = UniBandConfig.home.infoImage;
 
+  const [currentAudio, setCurrentAudio] = useState<AudioFile | null>(null);
+
   return (
     <>
       <TitleBlock>
@@ -191,8 +194,12 @@ export default function Home() {
           <a href="/join">Join the band</a>
         </JoinButton>
         <AudioPlayerContainer>
-          <AudioPlayer />
+          <AudioPlayer
+            currentAudio={currentAudio}
+            setCurrentAudio={setCurrentAudio}
+          />
         </AudioPlayerContainer>
+        <FloatingPNGs frequency={100} opacity={currentAudio ? 0.2 : 0} />
       </TitleBlock>
       <About>
         <HighlightImage src={infoImage.path} alt={infoImage.alt} />
