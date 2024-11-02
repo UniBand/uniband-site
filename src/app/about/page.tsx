@@ -106,7 +106,7 @@ export default function About() {
           <div>
             <h1>{director.person.name}</h1>
             <h2>{director.person.role}</h2>
-            <p>{director.text}</p>
+            <ConfigText text={director.text} />
           </div>
         </Director>
       </ContentContainer>

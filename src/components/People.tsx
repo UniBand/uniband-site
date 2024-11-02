@@ -10,7 +10,7 @@ export interface Person {
 
 export interface directorProps {
   person: Person;
-  text: string;
+  text: string | string[];
 }
 
 const PeopleListStyle = styled.div`
