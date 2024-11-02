@@ -1,6 +1,13 @@
 import { UniBandConfig } from "@/config";
 import { UniBandText } from "./components";
-import { ElementType } from "react";
+import React, { ElementType } from "react";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeReact, { Options } from "rehype-react";
+import rehypeRaw from "rehype-raw";
+import { jsx, Fragment } from "react/jsx-runtime";
 
 function getVariable(key: string): JSX.Element | string | undefined {
   if (key === "email") {
@@ -8,57 +15,61 @@ function getVariable(key: string): JSX.Element | string | undefined {
     return <a href={`mailto:${email}`}>{email}</a>;
   }
   const variable = UniBandConfig[key as keyof typeof UniBandConfig];
-  if (variable && typeof variable === "string") {
-    return variable;
-  }
-  return undefined;
+  return variable && typeof variable === "string" ? variable : undefined;
 }
 
-function parseTextToElements(text: string): (string | JSX.Element)[] {
-  const elements: (string | JSX.Element)[] = [];
-  const regex =
-    /\$\{(\w+)\}|\*\*(.+?)\*\*|\[(.+?)\]\((\/[^\)]+|https?:\/\/[^\)]+)\)|UniBand/g;
-  let lastIndex = 0;
+// Parse the Markdown with replacements for custom variables and components
+function parseTextToElements(text: string): JSX.Element {
+  const modifiedText = text
+    .replace(/UniBand/g, "<aside class='uniband'></aside>")
+    .replace(/\$\{(\w+)\}/g, (_, key) => {
+      const variableValue = getVariable(key);
+      return variableValue ? `${variableValue}` : key;
+    });
 
-  const addTextSegment = (start: number, end: number) => {
-    if (lastIndex < start) {
-      elements.push(text.slice(lastIndex, start));
-    }
-    lastIndex = end;
-  };
+  console.log(modifiedText);
 
-  text.replace(regex, (match, variableKey, boldText, linkText, url, offset) => {
-    addTextSegment(offset, offset + match.length);
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeReact, {
+      createElement: React.createElement,
+      Fragment,
+      jsx: jsx,
+      jsxs: jsx,
+      components: {
+        aside: ({ className, children }) => {
+          if (className === "uniband") {
+            console.log("Rendering UniBandText");
+            return <UniBandText />;
+          }
+          return <aside>{children}</aside>;
+        },
+        a: ({ href, children }) => {
+          const isExternal = /^https?:\/\//.test(href || "");
+          return (
+            <a
+              href={href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noreferrer" : undefined}
+            >
+              {children}
+            </a>
+          );
+        },
+        span: ({ children, "data-variable": key }) =>
+          key ? getVariable(key as string) ?? children : children,
+        strong: (props) => <b {...props} />,
+      },
+    } as Options);
 
-    if (variableKey) {
-      const variableElement = getVariable(variableKey);
-      elements.push(variableElement ?? variableKey);
-    } else if (boldText) {
-      elements.push(<b key={offset}>{parseTextToElements(boldText)}</b>);
-    } else if (linkText && url) {
-      const isExternal = /^https?:\/\//.test(url);
-      elements.push(
-        <a
-          key={offset}
-          href={url}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noreferrer" : undefined}
-        >
-          {parseTextToElements(linkText)}
-        </a>
-      );
-    } else if (match === "UniBand") {
-      elements.push(<UniBandText key={offset} />);
-    }
+  const parsedContent = processor.processSync(modifiedText)
+    .result as JSX.Element;
 
-    return ""; // `replace` expects a return value
-  });
-
-  if (lastIndex < text.length) {
-    elements.push(text.slice(lastIndex));
-  }
-
-  return elements;
+  console.log(parsedContent.props.children);
+  return parsedContent;
 }
 
 interface ConfigTextProps {
@@ -67,24 +78,19 @@ interface ConfigTextProps {
 }
 
 export function ConfigText({ text, wrapper: Wrapper = "p" }: ConfigTextProps) {
-  // Ensure text is a single string if it's an array
   const isArray = Array.isArray(text);
 
-  // Parse text based on whether it's an array or single string
   const parsedText = isArray
     ? (text as string[]).map((t) => parseTextToElements(t))
     : parseTextToElements(text as string);
 
-  // Render based on if `text` is an array
-  if (isArray) {
-    return (
-      <>
-        {(parsedText as (string | JSX.Element)[][]).map((content, index) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: doesn't matter for this
-          <Wrapper key={index}>{content}</Wrapper>
-        ))}
-      </>
-    );
-  }
-  return <Wrapper>{parsedText}</Wrapper>;
+  return isArray ? (
+    <>
+      {(parsedText as JSX.Element[]).map((content, index) => (
+        <Wrapper key={index}>{content}</Wrapper>
+      ))}
+    </>
+  ) : (
+    <Wrapper>{parsedText}</Wrapper>
+  );
 }
