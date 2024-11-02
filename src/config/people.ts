@@ -3,6 +3,7 @@ import { directorProps } from "@/components/People";
 
 // Name is required.  Role, image, and email are optional.
 // Order on the page is determined by the order in the list below.
+// Images get cropped to a square, so make sure they're square.
 
 const executiveCommittee: Person[] = [
   {

@@ -9,11 +9,12 @@ export const UniBandConfig = {
   galleryPath: "gallery",
 
   email: "info@uniband.nz",
-  youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw",
+  youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw",  // Just the ID
   instagram: "https://www.instagram.com/uoa_uniband",
   facebook: "https://www.facebook.com/UniBandNZ",
   givealittle: "https://givealittle.co.nz/org/uniband",
 
+  // Try to keep in the format of "https://docs.google.com/forms/d/e/FORM_ID/viewform". I don't know if it'll work with other URL formats.
   signUpForm: "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform",
 
 
