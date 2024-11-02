@@ -23,6 +23,13 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <cite
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: :)
+            dangerouslySetInnerHTML={{
+              __html:
+                "<!-- Website designed and developed by Samuel Ou. https://github.com/S-Ou -->",
+            }}
+          />
         </StyledComponentsRegistry>
       </body>
     </html>
