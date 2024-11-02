@@ -27,7 +27,7 @@ export default function Videos() {
             target="_blank"
             rel="noreferrer"
           >
-            Find us on YouTube
+            Follow us on YouTube
           </a>
         </Button>
       </ButtonWrap>
