@@ -2,8 +2,8 @@ import {
   Event,
 } from "@/components/Event";
 
-// Each event contains these fields: title, startDate, description
-// Optional fields: endDate, imagePath, location, locationUrl, urls, youtubeCodes
+// Each event contains these fields: title, startDate
+// Optional fields: description, endDate, imagePath, location, locationUrl, urls, youtubeCodes
 
 // Order doesn't matter, as the site will sort them by date
 // To help navigate the list below, they're grouped by the type of event

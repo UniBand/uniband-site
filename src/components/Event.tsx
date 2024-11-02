@@ -6,7 +6,7 @@ export interface Event {
   title: string;
   startDate: string;
   endDate?: string;
-  description: string;
+  description?: string;
   imagePath?: string;
   location?: string;
   locationUrl?: string;
@@ -241,7 +241,9 @@ export function EventComponent({
           {formatDate(startDate, endDate)}
         </EventDetails>
 
-        <ConfigText text={description} wrapper={EventDescription} />
+        {description && (
+          <ConfigText text={description} wrapper={EventDescription} />
+        )}
 
         {activeUrls.length > 0 && (
           <Urls>
