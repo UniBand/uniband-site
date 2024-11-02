@@ -1,6 +1,6 @@
 import { UniBandAudioFiles } from "@/config";
 import { MusicNote } from "@mui/icons-material";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 export interface AudioFile {
@@ -63,7 +63,7 @@ interface CurrentlyPlayingProps {
 const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
   font-size: 1.5rem !important;
   font-style: italic;
-  max-width: 75vw;
+  max-width: calc(100vw - 8rem);
   opacity: ${({ currentAudio, isFadingOut }) =>
     currentAudio && !isFadingOut ? "0.9" : "0"};
   position: absolute;
@@ -78,13 +78,16 @@ const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
 interface AudioPlayerProps {
   currentAudio: AudioFile | null;
   setCurrentAudio: (audio: AudioFile | null) => void;
+  isFadingOut: boolean;
+  setIsFadingOut: (isFadingOut: boolean) => void;
 }
 
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   currentAudio,
   setCurrentAudio,
+  isFadingOut,
+  setIsFadingOut,
 }) => {
-  const [isFadingOut, setIsFadingOut] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const playRandomAudio = () => {

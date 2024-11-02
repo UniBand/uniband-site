@@ -184,6 +184,7 @@ export default function Home() {
   const infoImage = UniBandConfig.home.infoImage;
 
   const [currentAudio, setCurrentAudio] = useState<AudioFile | null>(null);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   return (
     <>
@@ -197,9 +198,14 @@ export default function Home() {
           <AudioPlayer
             currentAudio={currentAudio}
             setCurrentAudio={setCurrentAudio}
+            isFadingOut={isFadingOut}
+            setIsFadingOut={setIsFadingOut}
           />
         </AudioPlayerContainer>
-        <FloatingPNGs frequency={100} opacity={currentAudio ? 0.2 : 0} />
+        <FloatingPNGs
+          frequency={100}
+          opacity={currentAudio && !isFadingOut ? 0.2 : 0}
+        />
       </TitleBlock>
       <About>
         <HighlightImage src={infoImage.path} alt={infoImage.alt} />
