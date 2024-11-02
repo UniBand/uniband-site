@@ -16,8 +16,7 @@ function getVariable(key: string): JSX.Element | string | undefined {
 
 function parseTextToElements(text: string): (string | JSX.Element)[] {
   const elements: (string | JSX.Element)[] = [];
-  const regex =
-    /\$\{(\w+)\}|\*\*(.+?)\*\*|\[(.+?)\]\((\/[^\)]+|https?:\/\/[^\)]+)\)|UniBand/g;
+  const regex = /\$\{(\w+)\}|\*\*(.+?)\*\*|\[([^\]\(]+)\]\((.+?)\)|UniBand/g;
   let lastIndex = 0;
 
   const addTextSegment = (start: number, end: number) => {
@@ -40,7 +39,7 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
       elements.push(
         <a
           key={offset}
-          href={url}
+          href={parseTextToElements(url).join("")}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noreferrer" : undefined}
         >
@@ -51,7 +50,7 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
       elements.push(<UniBandText key={offset} />);
     }
 
-    return ""; // `replace` expects a return value
+    return "";
   });
 
   if (lastIndex < text.length) {
