@@ -19,13 +19,14 @@ const PeopleListStyle = styled.div`
   }
 `;
 
-const ProfileStyle = styled.div`
+const ProfileStyle = styled.div<{ size: string }>`
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
   transition: transform 400ms ease;
+  max-width: ${({ size }) => size};
 
   h1 {
     font-size: 1.5rem;
@@ -38,6 +39,18 @@ const ProfileStyle = styled.div`
   &:hover {
     transform: translateY(-0.25rem);
   }
+
+  @media (max-width: 768px) {
+    max-width: calc(${({ size }) => size} * 0.6);
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 0.75rem;
+    }
+  }
 `;
 
 const ProfileImage = styled.img<{ size: string }>`
@@ -47,6 +60,11 @@ const ProfileImage = styled.img<{ size: string }>`
   aspect-ratio: 1/1;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: calc(${({ size }) => size} * 0.6);
+    width: calc(${({ size }) => size} * 0.6);
+  }
 `;
 
 function Profile({
@@ -60,7 +78,7 @@ function Profile({
   image = image || logo.src;
 
   const content = (
-    <ProfileStyle>
+    <ProfileStyle size={size}>
       <ProfileImage src={image} alt={imageAlt} size={size} />
       <h1>{name}</h1>
       {role && <h2>{role}</h2>}
