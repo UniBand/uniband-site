@@ -1,9 +1,5 @@
 import { Person } from "@/components";
-
-interface directorProps {
-  person: Person,
-  text: string,
-};
+import { directorProps } from "@/components/People";
 
 // Name is required.  Role, image, and email are optional.
 // Order on the page is determined by the order in the list below.

@@ -8,6 +8,11 @@ export interface Person {
   email?: string;
 }
 
+export interface directorProps {
+  person: Person;
+  text: string;
+}
+
 const PeopleListStyle = styled.div`
   display: flex;
   gap: 5rem;
