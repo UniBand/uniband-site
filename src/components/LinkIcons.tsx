@@ -3,6 +3,7 @@ import { EmailOutlined, YouTube } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Givealittle from "./icons/GiveALittle";
+import { UniBandConfig } from "@/config";
 
 const LinkIconsStyled = styled.div`
   display: flex;
@@ -20,37 +21,28 @@ const LinkIconsStyled = styled.div`
 `;
 
 export default function LinkIcons() {
+  const { instagram, facebook, youTubeChannelId, email, givealittle } =
+    UniBandConfig;
+
   return (
     <LinkIconsStyled>
-      <a
-        href="https://www.instagram.com/uoa_uniband"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={instagram} target="_blank" rel="noreferrer">
         <InstagramIcon />
       </a>
-      <a
-        href="https://www.facebook.com/UniBandNZ"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={facebook} target="_blank" rel="noreferrer">
         <FacebookIcon />
       </a>
       <a
-        href="https://www.youtube.com/channel/UCy_Eez7ZamDM31jOTRvqrWw"
+        href={`https://www.youtube.com/channel/${youTubeChannelId}`}
         target="_blank"
         rel="noreferrer"
       >
         <YouTube />
       </a>
-      <a
-        href="https://givealittle.co.nz/org/uniband"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={givealittle} target="_blank" rel="noreferrer">
         <Givealittle />
       </a>
-      <a href="mailto:info@uniband.nz">
+      <a href={`mailto:${email}`}>
         <EmailOutlined />
       </a>
     </LinkIconsStyled>

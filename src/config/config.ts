@@ -9,10 +9,13 @@ export const UniBandConfig = {
   galleryPath: "gallery",
 
   email: "info@uniband.nz",
+  youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw",
+  instagram: "https://www.instagram.com/uoa_uniband",
+  facebook: "https://www.facebook.com/UniBandNZ",
+  givealittle: "https://givealittle.co.nz/org/uniband",
 
   signUpForm: "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform",
 
-  youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw",
 
   // For multi-line text, use an array of strings, like so: ["Line 1", "Line 2"]
   // Any of the variables set above can be referenced in text like "Email us at ${email}!"
@@ -49,6 +52,7 @@ export const UniBandConfig = {
     contactText: [
       "You can contact us by sending an email to **${email}**.",
       "You can also find us at the **School of Music** in the University of Auckland (6 Symonds Street, Auckland 1010).",
+      "Follow us on [Instagram](${instagram}), [Facebook](${facebook}), and [YouTube](https://www.youtube.com/channel/${youTubeChannelId})!",
     ],
   },
   join: {
