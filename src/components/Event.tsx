@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HighlightImage } from "./components";
+import { ConfigText } from "./ConfigText";
 
 export interface Event {
   title: string;
@@ -240,7 +241,7 @@ export function EventComponent({
           {formatDate(startDate, endDate)}
         </EventDetails>
 
-        <EventDescription>{description}</EventDescription>
+        <ConfigText text={description} wrapper={EventDescription} />
 
         {activeUrls.length > 0 && (
           <Urls>
