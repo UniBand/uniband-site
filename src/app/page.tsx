@@ -168,11 +168,6 @@ function GalleryComponent() {
     fetchFiles();
   }, []);
 
-  console.log(files);
-  files.map((file) =>
-    console.log(`/${UniBandConfig.galleryPath}/${file.path}`)
-  );
-
   return (
     <Gallery>
       <SliderStyle {...settings}>

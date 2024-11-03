@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const HighlightImageStyle = styled.div`
   align-items: center;
@@ -17,15 +19,49 @@ const HighlightImageStyle = styled.div`
   }
 `;
 
+const fetchImageDimensions = async (imagePath: string) => {
+  try {
+    const response = await fetch(
+      `/api/getImageDimensions?imagePath=${encodeURIComponent(
+        `public/${imagePath}`
+      )}`
+    );
+    if (!response.ok) throw new Error("Failed to fetch image dimensions");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching image dimensions:", error);
+    return { width: 0, height: 0 };
+  }
+};
+
 interface HighlightImageProps {
   src: string;
   alt: string;
 }
 
 export function HighlightImage({ src, alt }: HighlightImageProps) {
+  const [dimensions, setDimensions] = useState<{
+    width: number;
+    height: number;
+  } | null>(null);
+
+  useEffect(() => {
+    fetchImageDimensions(src).then((dims) => setDimensions(dims));
+  }, [src]);
+
   return (
     <HighlightImageStyle>
-      <img src={src} alt={alt} />
+      {dimensions ? (
+        <Image
+          src={
+            src.startsWith("https://") || src.startsWith("/") ? src : `/${src}`
+          }
+          alt={alt}
+          width={dimensions.width}
+          height={dimensions.height}
+        />
+      ) : null}
     </HighlightImageStyle>
   );
 }
