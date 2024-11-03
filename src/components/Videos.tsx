@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { gapi } from "gapi-script";
-import config from "@/app/config/config";
 import styled from "styled-components";
-import { decodeHTMLEntities } from "./components";
 import { Skeleton } from "@mui/material";
+import config from "@/app/config/config";
+import { decodeHTMLEntities } from "./components";
 import { UniBandConfig } from "@/config";
 
 const API_KEY = config.youtube.apiKey;
@@ -52,43 +52,29 @@ const SystemText = styled.p`
   text-align: center;
 `;
 
-const fetchVideos = () => {
-  const [videos, setVideos] = useState<YoutubeVideo[]>([]);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const loadClient = async () => {
+async function fetchVideos() {
+  return new Promise<YoutubeVideo[]>((resolve, reject) => {
+    gapi.load("client", async () => {
       try {
-        await gapi.load("client", async () => {
-          await gapi.client.init({
-            apiKey: API_KEY,
-          });
-          await gapi.client.load("youtube", "v3");
+        await gapi.client.init({ apiKey: API_KEY });
+        await gapi.client.load("youtube", "v3");
 
-          const response = await gapi.client.youtube.search.list({
-            part: "snippet",
-            channelId: UniBandConfig.youTubeChannelId,
-            maxResults: 100,
-            order: "date",
-            type: "video",
-          });
-
-          setVideos(response.result.items);
+        const response = await gapi.client.youtube.search.list({
+          part: "snippet",
+          channelId: UniBandConfig.youTubeChannelId,
+          maxResults: 100,
+          order: "date",
+          type: "video",
         });
+
+        resolve(response.result.items);
       } catch (err) {
         console.error("Error loading GAPI client or fetching videos:", err);
-        setError("Failed to load videos");
+        reject("Failed to load videos");
       }
-    };
-
-    loadClient();
-  }, []);
-
-  if (error) return error;
-  if (!videos.length) return null;
-
-  return videos;
-};
+    });
+  });
+}
 
 function VideoCard({ video }: { video: YoutubeVideo }) {
   const title = decodeHTMLEntities(video.snippet.title);
@@ -126,7 +112,6 @@ const VideoCardSkeleton = () => (
         width: "100%",
       }}
     />
-
     <VideoTitle>
       <Skeleton animation="wave" variant="text" />
     </VideoTitle>
@@ -134,23 +119,32 @@ const VideoCardSkeleton = () => (
 );
 
 export default function VideosComponent() {
-  const videos = fetchVideos();
+  const {
+    data: videos,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ["videos"],
+    queryFn: fetchVideos,
+    retry: 2,
+    enabled: typeof window !== "undefined", // Only run on the client
+  });
 
-  if (typeof videos === "string") return <SystemText>{videos}</SystemText>;
+  if (error) return <SystemText>Failed to load videos</SystemText>;
 
-  if (!videos)
+  if (isLoading)
     return (
       <VideoList>
-        {Array.from({ length: 4 }).map((_) => (
-          // biome-ignore lint/correctness/useJsxKeyInIterable: Skeleton
-          <VideoCardSkeleton />
+        {Array.from({ length: 4 }).map((_, index) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: No keys needed for skeletons
+          <VideoCardSkeleton key={index} />
         ))}
       </VideoList>
     );
 
   return (
     <VideoList>
-      {videos.map((video) => (
+      {videos?.map((video) => (
         <VideoCard key={video.id.videoId} video={video} />
       ))}
     </VideoList>
