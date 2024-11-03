@@ -1,3 +1,4 @@
+import { UniBandConfig } from "@/config";
 import { GetServerSideProps } from "next";
 
 interface PageProps {
@@ -57,7 +58,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   // Default values
   const defaultData = {
     title: "UniBand",
-    description: "Auckland’s top tertiary-level Concert Band",
+    description: UniBandConfig.home.subtitle,
     imageUrl: "/Icon.png",
   };
 
