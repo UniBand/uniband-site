@@ -53,7 +53,7 @@ const Icon = styled.img`
   width: auto;
 `;
 
-const HomeLink = styled.a`
+const HomeLink = styled.h1`
   align-items: center;
   display: flex;
   font-size: 3rem;
