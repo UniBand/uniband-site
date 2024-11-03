@@ -6,6 +6,7 @@ import { Footer, Header } from "@/components/header-footer";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useState } from "react";
 import { UniBandConfig } from "@/config";
+import { slugDefaultData } from "@/pages/[slug]";
 
 const metadata = {
   title: "UniBand",
@@ -24,6 +25,9 @@ export default function RootLayout({
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <meta property="og:title" content={slugDefaultData.title} />
+        <meta property="og:description" content={slugDefaultData.description} />
+        <meta property="og:image" content={slugDefaultData.imageUrl} />
         <link rel="icon" href="/public/favicon.ico" />
       </head>
       <body>

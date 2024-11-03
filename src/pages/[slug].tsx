@@ -1,6 +1,16 @@
+import { UniBandConfig } from "@/config";
 import { GetServerSideProps } from "next";
-import { slugDefaultData, SlugProps } from ".";
+interface SlugProps {
+  title?: string;
+  description?: string;
+  imageUrl?: string;
+}
 
+export const slugDefaultData = {
+  title: "UniBand",
+  description: UniBandConfig.home.subtitle,
+  imageUrl: "/Icon.png",
+};
 interface PageProps extends SlugProps {
   ogUrl: string;
 }
