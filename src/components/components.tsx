@@ -54,9 +54,7 @@ export function HighlightImage({ src, alt }: HighlightImageProps) {
     <HighlightImageStyle>
       {dimensions ? (
         <Image
-          src={
-            src.startsWith("https://") || src.startsWith("/") ? src : `/${src}`
-          }
+          src={prependImageSlash(src)}
           alt={alt}
           width={dimensions.width}
           height={dimensions.height}
@@ -64,6 +62,10 @@ export function HighlightImage({ src, alt }: HighlightImageProps) {
       ) : null}
     </HighlightImageStyle>
   );
+}
+
+export function prependImageSlash(src: string): string {
+  return src.startsWith("https://") || src.startsWith("/") ? src : `/${src}`;
 }
 
 export const BodyContent = styled.div`

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import logo from "@/assets/logo.png";
+import Image from "next/image";
+import { prependImageSlash } from "./components";
 
 export interface Person {
   name: string;
@@ -58,7 +60,7 @@ const ProfileStyle = styled.div<{ size: string }>`
   }
 `;
 
-const ProfileImage = styled.img<{ size: string }>`
+const ProfileImage = styled(Image)<{ size: string }>`
   border-radius: 2rem;
   height: ${({ size }) => size};
   width: ${({ size }) => size};
@@ -84,7 +86,13 @@ function Profile({
 
   const content = (
     <ProfileStyle size={size}>
-      <ProfileImage src={image} alt={imageAlt} size={size} />
+      <ProfileImage
+        src={prependImageSlash(image)}
+        alt={imageAlt}
+        size={size}
+        width={1024}
+        height={1024}
+      />
       <h1>{name}</h1>
       {role && <h2>{role}</h2>}
     </ProfileStyle>
