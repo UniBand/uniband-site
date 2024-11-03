@@ -1,12 +1,8 @@
+// components/Videos.tsx
 import { useQuery } from "@tanstack/react-query";
-import { gapi } from "gapi-script";
 import styled from "styled-components";
 import { Skeleton } from "@mui/material";
-import config from "@/app/config/config";
 import { decodeHTMLEntities } from "./components";
-import { UniBandConfig } from "@/config";
-
-const API_KEY = config.youtube.apiKey;
 
 interface YoutubeVideo {
   id: { videoId: string };
@@ -53,27 +49,11 @@ const SystemText = styled.p`
 `;
 
 async function fetchVideos() {
-  return new Promise<YoutubeVideo[]>((resolve, reject) => {
-    gapi.load("client", async () => {
-      try {
-        await gapi.client.init({ apiKey: API_KEY });
-        await gapi.client.load("youtube", "v3");
-
-        const response = await gapi.client.youtube.search.list({
-          part: "snippet",
-          channelId: UniBandConfig.youTubeChannelId,
-          maxResults: 100,
-          order: "date",
-          type: "video",
-        });
-
-        resolve(response.result.items);
-      } catch (err) {
-        console.error("Error loading GAPI client or fetching videos:", err);
-        reject("Failed to load videos");
-      }
-    });
-  });
+  const response = await fetch("/api/videos");
+  if (!response.ok) {
+    throw new Error("Failed to fetch videos");
+  }
+  return response.json();
 }
 
 function VideoCard({ video }: { video: YoutubeVideo }) {
@@ -127,7 +107,6 @@ export default function VideosComponent() {
     queryKey: ["videos"],
     queryFn: fetchVideos,
     retry: 2,
-    enabled: typeof window !== "undefined", // Only run on the client
   });
 
   if (error) return <SystemText>Failed to load videos</SystemText>;
@@ -136,7 +115,7 @@ export default function VideosComponent() {
     return (
       <VideoList>
         {Array.from({ length: 4 }).map((_, index) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: No keys needed for skeletons
+          // biome-ignore lint/suspicious/noArrayIndexKey: Skeleton
           <VideoCardSkeleton key={index} />
         ))}
       </VideoList>
@@ -144,7 +123,7 @@ export default function VideosComponent() {
 
   return (
     <VideoList>
-      {videos?.map((video) => (
+      {videos?.map((video: YoutubeVideo) => (
         <VideoCard key={video.id.videoId} video={video} />
       ))}
     </VideoList>
