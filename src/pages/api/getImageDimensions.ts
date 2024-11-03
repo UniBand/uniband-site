@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const fullPath = path.join(process.cwd(), imagePath);
     const { width, height } = await sharp(fullPath).metadata();
-    res.status(200).json({ width, height });
+    res.status(200).json({ width, height, path: fullPath });
   } catch (error) {
     console.error("Error getting image dimensions:", error);
     res.status(500).json({ error: "Failed to retrieve image dimensions", message: error });
