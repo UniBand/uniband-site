@@ -5,6 +5,12 @@ import StyledComponentsRegistry from "@/lib/registry";
 import { Footer, Header } from "@/components/header-footer";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useState } from "react";
+import { UniBandConfig } from "@/config";
+
+const metadata = {
+  title: "UniBand",
+  description: UniBandConfig.home.subtitle,
+};
 
 export default function RootLayout({
   children,
@@ -16,6 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
         <link rel="icon" href="/public/favicon.ico" />
       </head>
       <body>
