@@ -12,6 +12,13 @@ import { useEffect, useState } from "react";
 import { ConfigText } from "@/components/ConfigText";
 import { AudioFile, AudioPlayer } from "@/components/AudioPlayer";
 import FloatingPNGs from "@/components/FloatingPNGs";
+import Image from "next/image";
+
+interface FileData {
+  path: string;
+  width: number;
+  height: number;
+}
 
 const TitleBlock = styled.div`
   padding-block: 10rem;
@@ -115,16 +122,17 @@ const GalleryImageWrapper = styled.div`
   display: flex;
   height: clamp(0px, 30rem, min(80vh, 50rem));
   justify-content: center;
-  overflow: hidden;
-  width: 100%;
   max-width: 80vw;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 `;
 
-const GalleryImage = styled.img`
+const GalleryImage = styled(Image)`
   border-radius: 1rem;
   max-height: 100%;
   max-width: 100%;
-  object-fit: cover;
+  width: auto;
 `;
 
 function GalleryComponent() {
@@ -140,7 +148,7 @@ function GalleryComponent() {
     pauseOnHover: true,
   };
 
-  const [files, setFiles] = useState<string[]>([]);
+  const [files, setFiles] = useState<FileData[]>([]);
 
   useEffect(() => {
     const fetchFiles = async () => {
@@ -149,7 +157,7 @@ function GalleryComponent() {
         if (!response.ok) {
           throw new Error("Failed to fetch files");
         }
-        const data: string[] = await response.json();
+        const data: FileData[] = await response.json();
         data.sort(() => Math.random() - 0.5);
         setFiles(data);
       } catch (error) {
@@ -160,16 +168,23 @@ function GalleryComponent() {
     fetchFiles();
   }, []);
 
+  console.log(files);
+  files.map((file) =>
+    console.log(`/${UniBandConfig.galleryPath}/${file.path}`)
+  );
+
   return (
     <Gallery>
       <SliderStyle {...settings}>
-        {files.map((filePath, i) => (
-          <div key={filePath}>
+        {files.map((file, i) => (
+          <div key={file.path}>
             <GalleryImageWrapper>
               <GalleryImage
-                key={filePath}
-                src={`/${UniBandConfig.galleryPath}/${filePath}`}
+                key={file.path}
+                src={`/${UniBandConfig.galleryPath}/${file.path}`}
                 alt={`Gallery image ${i + 1}`}
+                width={file.width}
+                height={file.height}
               />
             </GalleryImageWrapper>
           </div>

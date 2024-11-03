@@ -21,6 +21,7 @@
     "react-dom": "19.0.0-rc-69d4b800-20241021",
     "react-query": "^3.39.3",
     "react-slick": "^0.30.2",
+    "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.13"
   },
