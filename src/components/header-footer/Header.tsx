@@ -108,7 +108,7 @@ const LinksList = styled.ul`
 `;
 
 interface LinksTrayProps {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 const LinksTray = styled.div<LinksTrayProps>`
@@ -117,9 +117,9 @@ const LinksTray = styled.div<LinksTrayProps>`
   display: flex;
   flex-direction: column;
   left: 0;
-  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")}; /* Fade effect */
+  opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")}; /* Fade effect */
   overflow: hidden;
-  pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
+  pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
   position: absolute;
   right: 0;
   top: 100%;
@@ -198,7 +198,7 @@ export default function Header() {
           </LinksList>
         </Nav>
       </GradientBackground>
-      <LinksTray isOpen={menuOpen}>
+      <LinksTray $isOpen={menuOpen}>
         <ul>
           {links.map(({ href, label }) => (
             <li key={href}>

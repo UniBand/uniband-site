@@ -222,7 +222,7 @@ export default function Home() {
         <AboutText>
           <ConfigText text={configText.infoHeader} wrapper="h2" />
           <ConfigText text={configText.infoContent} />
-          <Button background="var(--dark-blue)" color="var(--background)">
+          <Button $background="var(--dark-blue)" $color="var(--background)">
             <a href="/about">Learn more</a>
           </Button>
           <LinkIcons />

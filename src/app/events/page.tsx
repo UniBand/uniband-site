@@ -85,9 +85,9 @@ export default function Events() {
         )}
 
         <Title
-          fontSize="4rem"
-          background="var(--dark-blue)"
-          responsiveSize="12vw"
+          $fontSize="4rem"
+          $background="var(--dark-blue)"
+          $responsiveSize="12vw"
         >
           Past Events
         </Title>

@@ -85,14 +85,14 @@ export default function About() {
           </BlurbContent>
         </Blurb>
         <People>
-          <Title background="var(--background)" responsiveSize="12vw">
+          <Title $background="var(--background)" $responsiveSize="12vw">
             Executive Committee
           </Title>
           <PeopleList people={executiveCommittee} />
           <Title
-            background="var(--background)"
-            fontSize="3rem"
-            responsiveSize="10vw"
+            $background="var(--background)"
+            $fontSize="3rem"
+            $responsiveSize="10vw"
           >
             General Committee
           </Title>

@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-  background?: string;
-  color?: string;
+  $background?: string;
+  $color?: string;
 }
 
 export const Button = styled.button<ButtonProps>`
-  background: ${({ background }) => background || "var(--background)"};
+  background: ${({ $background }) => $background || "var(--background)"};
   border-radius: 0.5rem;
-  border: ${({ color }) => color || "var(--dark-blue)"} 2px solid;
-  color: ${({ color }) => color || "var(--dark-blue)"};
+  border: ${({ $color }) => $color || "var(--dark-blue)"} 2px solid;
+  color: ${({ $color }) => $color || "var(--dark-blue)"};
   cursor: pointer;
   font-size: 1.25rem;
   font-stretch: expanded;
@@ -19,7 +19,7 @@ export const Button = styled.button<ButtonProps>`
   width: fit-content;
 
   &:hover {
-    background: ${({ color }) => color || "var(--dark-blue)"};
-    color: ${({ background }) => background || "var(--background)"};
+    background: ${({ $color }) => $color || "var(--dark-blue)"};
+    color: ${({ $background }) => $background || "var(--background)"};
   }
 `;

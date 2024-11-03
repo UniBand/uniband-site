@@ -19,19 +19,19 @@ const Container = styled.div`
 `;
 
 interface PlayButtonProps {
-  currentAudio: AudioFile | null;
-  isFadingOut: boolean;
+  $currentAudio: AudioFile | null;
+  $isFadingOut: boolean;
 }
 
 const PlayButton = styled.button<PlayButtonProps>`
-  background-color: ${({ currentAudio, isFadingOut }) =>
-    currentAudio && !isFadingOut
+  background-color: ${({ $currentAudio, $isFadingOut }) =>
+    $currentAudio && !$isFadingOut
       ? "rgba(var(--dark-blue-rgb), 0.7)"
       : "var(--background)"};
   border-radius: 50%;
   border: 2px solid var(--dark-blue);
-  color: ${({ currentAudio, isFadingOut }) =>
-    currentAudio && !isFadingOut ? "var(--background)" : "var(--dark-blue)"};
+  color: ${({ $currentAudio, $isFadingOut }) =>
+    $currentAudio && !$isFadingOut ? "var(--background)" : "var(--dark-blue)"};
   cursor: pointer;
   height: 4rem;
   padding: 0.5rem;
@@ -56,16 +56,16 @@ const PlayIconContainer = styled.div`
 `;
 
 interface CurrentlyPlayingProps {
-  currentAudio: AudioFile | null;
-  isFadingOut: boolean;
+  $currentAudio: AudioFile | null;
+  $isFadingOut: boolean;
 }
 
 const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
   font-size: 1.5rem !important;
   font-style: italic;
   max-width: calc(100vw - 8rem);
-  opacity: ${({ currentAudio, isFadingOut }) =>
-    currentAudio && !isFadingOut ? "0.9" : "0"};
+  opacity: ${({ $currentAudio, $isFadingOut }) =>
+    $currentAudio && !$isFadingOut ? "0.9" : "0"};
   position: absolute;
   right: calc(100% + 1rem);
   text-align: right;
@@ -120,14 +120,14 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     <Container>
       <PlayButton
         onClick={playRandomAudio}
-        currentAudio={currentAudio}
-        isFadingOut={isFadingOut}
+        $currentAudio={currentAudio}
+        $isFadingOut={isFadingOut}
       >
         <PlayIconContainer>
           <MusicNote />
         </PlayIconContainer>
       </PlayButton>
-      <CurrentlyPlaying currentAudio={currentAudio} isFadingOut={isFadingOut}>
+      <CurrentlyPlaying $currentAudio={currentAudio} $isFadingOut={isFadingOut}>
         {currentAudio?.name}
       </CurrentlyPlaying>
     </Container>
