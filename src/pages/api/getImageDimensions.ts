@@ -16,6 +16,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(200).json({ width, height });
   } catch (error) {
     console.error("Error getting image dimensions:", error);
-    res.status(500).json({ error: "Failed to retrieve image dimensions" });
+    res.status(500).json({ error: "Failed to retrieve image dimensions", message: error });
   }
 }
