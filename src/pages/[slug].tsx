@@ -1,10 +1,7 @@
-import { UniBandConfig } from "@/config";
 import { GetServerSideProps } from "next";
+import { slugDefaultData, SlugProps } from ".";
 
-interface PageProps {
-  title: string;
-  description: string;
-  imageUrl: string;
+interface PageProps extends SlugProps {
   ogUrl: string;
 }
 
@@ -31,11 +28,8 @@ const LinkPreview: React.FC<PageProps> = ({
   );
 };
 
-interface SlugParams {
+interface SlugParams extends SlugProps {
   slug: string;
-  title?: string;
-  description?: string;
-  imageUrl?: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -56,22 +50,22 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   ];
 
   // Default values
-  const defaultData = {
-    title: "UniBand",
-    description: UniBandConfig.home.subtitle,
-    imageUrl: "/Icon.png",
-  };
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    imageUrl: defaultImageUrl,
+  } = slugDefaultData;
 
   const linkData = data.find((link) => link.slug === slug);
 
   return {
     props: {
-      title: linkData ? linkData.title : defaultData.title,
-      description: linkData ? linkData.description : defaultData.description,
-      imageUrl: linkData ? linkData.imageUrl : defaultData.imageUrl,
+      title: linkData ? linkData.title : defaultTitle,
+      description: linkData ? linkData.description : defaultDescription,
+      imageUrl: linkData ? linkData.imageUrl : defaultImageUrl,
       ogUrl: linkData
         ? currentUrl
-        : `${protocol}://${host}/links/${defaultData.title}`,
+        : `${protocol}://${host}/links/${defaultTitle}`,
     },
   };
 };
