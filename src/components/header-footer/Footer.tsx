@@ -3,6 +3,10 @@
 import styled from "styled-components";
 import LinkIcons from "../LinkIcons";
 
+const FooterContainer = styled.footer`
+  margin-top: auto;
+`;
+
 const StyledFooter = styled.footer`
   background: var(--blue-gradient);
   color: white;
@@ -19,10 +23,12 @@ const StyledFooter = styled.footer`
 
 export default function Footer() {
   return (
-    <StyledFooter>
-      &copy; {new Date().getFullYear()} UniBand Incorporated. All rights
-      reserved.
-      <LinkIcons />
-    </StyledFooter>
+    <FooterContainer>
+      <StyledFooter>
+        &copy; {new Date().getFullYear()} UniBand Incorporated. All rights
+        reserved.
+        <LinkIcons />
+      </StyledFooter>
+    </FooterContainer>
   );
 }
