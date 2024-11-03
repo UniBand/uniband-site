@@ -1,6 +1,7 @@
 # UniBand website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/745db3e1-1f9c-438b-a249-aed3e66146e7/deploy-status)](https://app.netlify.com/sites/uniband/deploys)
+
 Check out the website over at https://uniband.nz!
 
 ## About
