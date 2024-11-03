@@ -34,7 +34,7 @@ const VideoEmbed = styled.iframe`
   }
 `;
 
-const VideoTitle = styled.h2`
+const VideoTitle = styled.p`
   font-size: 1.5rem;
   font-stretch: condensed;
   font-weight: 400;
