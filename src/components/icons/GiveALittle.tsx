@@ -1,10 +1,10 @@
 import React from "react";
-import giveALittleImage from "../../assets/icons/givealittle.png";
+import GiveALittleIcon from "../../assets/icons/givealittle.svg";
 
 const Givealittle: React.FC = () => {
   return (
     <div>
-      <img src={giveALittleImage.src} alt="Givealittle" />
+      <GiveALittleIcon aria-label="Givealittle" />
     </div>
   );
 };

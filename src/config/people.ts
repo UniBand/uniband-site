@@ -30,38 +30,38 @@ const executiveCommittee: Person[] = [
     image: "about/people/cameron.jpg",
     email: "secretary@uniband.nz",
   },
-  {
-    name: "TBA",
-    role: "Band Manager",
-    image: "about/people/placeholder.jpg",
-    email: "bandmanager@uniband.nz",
-  },
+  // {
+  //   name: "TBA",
+  //   role: "Band Manager",
+  //   image: "about/people/placeholder.jpg",
+  //   email: "bandmanager@uniband.nz",
+  // },
 ];
 
 const generalCommittee: Person[] = [
   {
     name: "Adara Burns",
-    role: "Librarian(?)",
+    // role: "Librarian(?)",
     image: "about/people/adara.jpg",
   },
   {
     name: "Anna Haine",
-    role: "TBA",
+    // role: "TBA",
     image: "about/people/anna.jpg",
   },
   {
     name: "Anthony Wang",
-    role: "TBA",
+    // role: "TBA",
     image: "about/people/anthony.jpg",
   },
   {
     name: "Becky Cheng",
-    role: "Social Media Manager(?)",
+    // role: "Social Media Manager(?)",
     image: "about/people/becky.jpg",
   },
   {
     name: "Bryn Klisky",
-    role: "TBA",
+    // role: "TBA",
     image: "about/people/bryn.jpg",
   },
 ];
