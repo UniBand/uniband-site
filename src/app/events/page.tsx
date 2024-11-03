@@ -20,6 +20,7 @@ const EventsContent = styled(BodyContent)`
 const EventsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const HorizontalLine = styled.hr`

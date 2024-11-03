@@ -26,6 +26,7 @@ const EventContainer = styled.div`
   flex-direction: row;
   gap: 2rem;
   justify-content: space-between;
+  width: 100%;
 
   @media (max-width: 1200px) {
     flex-direction: column;
@@ -47,6 +48,7 @@ const EventContents = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   flex: 1;
+  width: 100%;
 `;
 
 const EventTitle = styled.h1`
