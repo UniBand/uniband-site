@@ -22,6 +22,7 @@ export const UniBandConfig = {
   // Any of the variables set above can be referenced in text like "Email us at ${email}!"
   // Wrap text in ** for bold like "This is **bold** text."
   // Wrap text in []() for links like "Visit [our website](https://example.com)."
+  // Make sure image extensions are all lowercase (e.g. no .JPGs only .jpgs!)
 
   home: {
     subtitle: "Auckland’s top tertiary-level Concert Band",
