@@ -154,7 +154,6 @@ const LinksTray = styled.div<LinksTrayProps>`
 const HamburgerButton = styled.button`
   color: white;
   display: none;
-  font-size: 2rem;
 
   @media (max-width: 1200px) {
     display: block;
@@ -162,7 +161,7 @@ const HamburgerButton = styled.button`
 `;
 
 const MenuIcon = styled(Menu)`
-  height: 2.5rem;
+  height: 4rem;
   width: auto;
 `;
 
