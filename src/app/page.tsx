@@ -130,6 +130,7 @@ const GalleryImageWrapper = styled.div`
 
 const GalleryImage = styled(Image)`
   border-radius: 1rem;
+  height: auto;
   max-height: 100%;
   max-width: 100%;
   width: auto;
