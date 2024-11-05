@@ -57,6 +57,26 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     //   description: "This is an example description for the link preview.",
     //   imageUrl: "/other-image.jpg",
     // },
+    {
+      slug: "about",
+      title: "UniBand | About",
+    },
+    {
+      slug: "contact",
+      title: "UniBand | Contact",
+    },
+    {
+      slug: "events",
+      title: "UniBand | Events",
+    },
+    {
+      slug: "videos",
+      title: "UniBand | Videos",
+    },
+    {
+      slug: "join",
+      title: "UniBand | Join",
+    },
   ];
 
   // Default values
