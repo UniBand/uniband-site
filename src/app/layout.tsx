@@ -28,7 +28,7 @@ export default function RootLayout({
         <meta property="og:title" content={slugDefaultData.title} />
         <meta property="og:description" content={slugDefaultData.description} />
         <meta property="og:image" content={slugDefaultData.imageUrl} />
-        <link rel="icon" href="/public/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <QueryClientProvider client={queryClient}>
