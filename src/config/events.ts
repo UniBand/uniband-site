@@ -42,6 +42,7 @@ export const UniBandEvents: Event[] = [
           hideWhenComplete: true,
         },
       ],
+      youtubeCodes: ["RZHpBmaUu2I"],
     },
     {
       title: "End of Year Concert 2023",
