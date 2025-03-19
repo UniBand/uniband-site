@@ -84,23 +84,6 @@ export const UniBandEvents: Event[] = [
 
     // NZCBA Festivals
     {
-      title: "NZCBA Festival 2025",
-      startDate: "2025-07-18",
-      endDate: "2025-07-20",
-      description:
-        "UniBand will perform at the 2025 NZCBA Concert Band Festival in Wellington.",
-      imagePath: "events/nzcba-logo.png",
-      urls: [
-        {
-          name: "NZCBA",
-          url: "https://nzcba.org/",
-        }
-      ],
-      location: "Alan Gibbs Centre, Wellington",
-      locationUrl: "https://maps.app.goo.gl/gaDiwGrtki2erQPc6",
-
-    },
-    {
       title: "NZCBA Festival 2024",
       startDate: "2024-08-02",
       endDate: "2024-08-04",
