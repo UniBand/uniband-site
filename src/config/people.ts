@@ -41,9 +41,9 @@ const executiveCommittee: Person[] = [
 
 const generalCommittee: Person[] = [
   {
-    name: "Adara Burns",
+    name: "Jamie",
     role: "Librarian",
-    image: "about/people/adara.jpg",
+    image: 
     email: "info@uniband.nz",
   },
   {
