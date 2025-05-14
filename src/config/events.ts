@@ -17,7 +17,7 @@ export const UniBandEvents: Event[] = [
       description:
         "The 2025 Semester 1 concert, performed by UniBand and featuing Uniband's Jazz Band. Directed by Jono Palmer with guest conductors Sue Lynn Leong, Athena Shiu, and Christopher Todd",
       imagePath: "events/Fire and Fable.png",
-      location: "Dorothy Winstone Centre ",
+      location: "Dorothy Winstone Centre, Auckland",
     },
     {
       title: "Glorious Heights",
