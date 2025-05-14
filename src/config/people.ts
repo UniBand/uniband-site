@@ -43,7 +43,7 @@ const generalCommittee: Person[] = [
   {
     name: "Jamie",
     role: "Librarian",
-    image: 
+    image: "path/to/image/here.png" 
     email: "info@uniband.nz",
   },
   {
