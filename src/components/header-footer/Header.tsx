@@ -79,6 +79,7 @@ const HomeLinkComponent = () => (
 
 const links = [
   { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
   { href: "/events", label: "Events" },
   { href: "/videos", label: "Videos" },
   { href: "/contact", label: "Contact" },
