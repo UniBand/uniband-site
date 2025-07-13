@@ -1,22 +1,59 @@
+interface Config {
+  galleryPath: string;
+  email: string;
+  youTubeChannelId: string;
+  instagram: string;
+  facebook: string;
+  givealittle: string;
+  signUpForm: string;
+
+  home: {
+    subtitle: string;
+    infoHeader: string;
+    infoContent: string[];
+    infoImage: ConfigImage;
+  };
+
+  about: {
+    aboutText: string[];
+    aboutImage: ConfigImage;
+  };
+
+  faq: Question[];
+
+  contact: {
+    contactText: string[];
+  };
+
+  join: {
+    joinText: string[];
+  };
+}
+
+export interface Question {
+  question: string;
+  answer: string;
+}
+
 interface ConfigImage {
   path: string;
   alt: string;
 }
 
-export const UniBandConfig = {
+export const UniBandConfig: Config = {
   // Path is public/[galleryPath]/, e.g. public/gallery/ => galleryPath: "gallery"
   // Try to not go overboard with the number of images in the gallery! More images = more data for users to load when they visit the site. One or two dozen should be fine.
   galleryPath: "gallery",
 
   email: "info@uniband.nz",
-  youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw",  // Just the ID
+  youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw", // Just the ID
   instagram: "https://www.instagram.com/uoa_uniband",
   facebook: "https://www.facebook.com/UniBandNZ",
   givealittle: "https://givealittle.co.nz/org/uniband",
 
   // Try to keep in the format of "https://docs.google.com/forms/d/e/FORM_ID/viewform". I don't know if it'll work with other URL formats.
-  signUpForm: "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform",
-
+  signUpForm:
+    "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform",
 
   // For multi-line text, use an array of strings, like so: ["Line 1", "Line 2"]
   // Any of the variables set above can be referenced in text like "Email us at ${email}!"
@@ -50,6 +87,44 @@ export const UniBandConfig = {
       alt: "UniBand performing",
     } as ConfigImage,
   },
+  faq: [
+    {
+      question: "Do I need to be studying music to join UniBand?",
+      answer:
+        "Not at all! UniBand is an all-comers concert band. You don’t need to be studying music to join. Many of our members are studying engineering, law, health sciences, and other degrees.",
+    },
+    {
+      question: "What events does UniBand perform at?",
+      answer:
+        "UniBand plays at a range of events throughout the year, including end-of-semester concerts, university events, and the annual NZCBA Concert Band Festival, which is hosted in a different city each year.",
+    },
+    {
+      question: "What instruments are we currently looking for?",
+      answer:
+        "We would love to hear from students who play low brass instruments such as the tuba, french horn and euphonium. If you don’t have your own instrument, we have some available for hire from the band.",
+    },
+    {
+      question: "What instruments does UniBand have for hire?",
+      answer:
+        "A euphonium, tuba, baritone saxophone, bass clarinet, and bassoon.",
+    },
+    {
+      question:
+        "Are there opportunities for high school students to see or join UniBand?",
+      answer:
+        "If you’re a high school student interested in exploring musical groups at university, you are very welcome to come visit and even join some of our rehearsals at the start of each semester. Our first rehearsal of each semester is always in week 1, check our social media for more details.",
+    },
+    {
+      question: "What is UniBand all about?",
+      answer:
+        "UniBand is more than just music — it’s a supportive and social community. We host several fun events throughout the year, such as movie nights, quiz nights and The Chase. It's a fantastic way to meet new people, make new friends, and build lasting connections.",
+    },
+    {
+      question: "What kind of music does UniBand play?",
+      answer:
+        "We play a variety of repertoire that is both challenging, fun and exciting. We perform music from films and musicals such as Star Wars, Les Misérables, Jurassic Park, and Wicked, as well as classical and contemporary works by composers like Gustav Holst, Robert W. Smith, and Dmitri Shostakovich.",
+    },
+  ],
   contact: {
     contactText: [
       "You can contact us by sending an email to **${email}**.",
@@ -62,7 +137,7 @@ export const UniBandConfig = {
       "UniBand is open to all students studying in any university, including the **University of Auckland** and **AUT**. No audition required!",
       "As a concert band, we are always looking for musicians playing **woodwind**, **brass**, and **percussion** instruments.",
       "We rehearse every **Thursday** from **7pm** to **9pm** at the University of Auckland **School of Music** during the university semester.",
-      "If you have any questions, feel free to [contact us](/contact)!"
+      "If you have any questions, feel free to [contact us](/contact)!",
     ],
   },
 };
