@@ -11,6 +11,10 @@ const ContentContainer = styled(BodyContent)`
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledQuestion = styled.div`
