@@ -71,7 +71,7 @@ const HomeLink = styled.h1`
 const HomeLinkComponent = () => (
   <Link href="/" passHref>
     <HomeLink>
-      <Icon src="/UniBandLogo-white.png" alt="UniBand Logo" />
+      <Icon src="/logo_white.png" alt="UniBand Logo" />
       UniBand
     </HomeLink>
   </Link>
