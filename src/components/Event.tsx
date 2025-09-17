@@ -218,7 +218,7 @@ export function EventComponent({
 
   const imageFragment = (
     <EventImage>
-      <HighlightImage src={imagePath ?? "UniBandLogo-spaced.png"} alt={title} />
+      <HighlightImage src={imagePath ?? "logo_spaced.png"} alt={title} />
     </EventImage>
   );
 
