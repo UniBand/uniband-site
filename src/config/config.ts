@@ -52,8 +52,9 @@ export const UniBandConfig: Config = {
   givealittle: "https://givealittle.co.nz/org/uniband",
 
   // Try to keep in the format of "https://docs.google.com/forms/d/e/FORM_ID/viewform". I don't know if it'll work with other URL formats.
-  signUpForm:
-    "https://docs.google.com/forms/d/e/1FAIpQLSeUf4YVvyk2cH3Y6nMQVkczT5ERUwSndkvwAW3oLRre_xxsCg/viewform",
+  signUpForm: "https://docs.google.com/forms/d/e/1FAIpQLSfO3X3oqM8RcFlv5efZb8CbCdJ2jf5feYTQaenjdtCs1IWxXA/viewform",
+
+
 
   // For multi-line text, use an array of strings, like so: ["Line 1", "Line 2"]
   // Any of the variables set above can be referenced in text like "Email us at ${email}!"
