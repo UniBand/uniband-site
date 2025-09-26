@@ -19,6 +19,7 @@ export const UniBandEvents: Event[] = [
       imagePath: "events/Land City Sea.png",
       location: "Dorothy Winstone Centre",
       locationUrl: "https://maps.app.goo.gl/GWJ756XwKECdwTCC9",
+      ticketsUrl: "https://www.eventbrite.co.nz/e/land-city-sea-tickets-1666109290739?aff=oddtdtcreator",
     },
     {
       title: "Fire and Fable",
