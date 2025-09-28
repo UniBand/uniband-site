@@ -77,7 +77,7 @@ export const UniBandConfig: Config = {
   about: {
     aboutText: [
       "**UniBand** is a student-founded and student-run concert band in Auckland. Founded in 2013, UniBand has been providing university students an opportunity to play challenging, yet fulfilling music with peers.",
-      "Unlike most other university music groups which strongly prioritise students studying music, UniBand is an all-comers band; open to musicians studying any degree, with many members studying degrees such as engineering, law, and others.",
+      "UniBand is an all-comers band; you don't have to be studying music to join us! Many of our members are studying degrees such as engineering, law, and others.",
       "UniBand performs at a variety of events throughout the year, including self-hosted concerts, university events, and the annual NZCBA Concert Band Festival.",
       "The heart of UniBand is the tight social community at its core. With a welcoming social environment and multiple casual events throughout the year, members form lasting friendships and connections.",
       "Rehearsals are held weekly on Thursdays evenings from 7-9pm on UoA campus during the University of Auckland semester.",
