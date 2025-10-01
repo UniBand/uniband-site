@@ -15,7 +15,7 @@ export const UniBandEvents: Event[] = [
       title: "Land, City, Sea",
       startDate: "2025-10-18",
       description:
-        "The 2025 Semester 2 concert, performed by UniBand, Jazz Band and the Wind Ensemble. Directed by Jono Palmer with guest conductors Sue Lynn Leong and Athena Shui.        You can purchase tickets here:https://www.eventbrite.co.nz/e/land-city-sea-tickets-1666109290739?aff=oddtdtcreator.",
+        "The 2025 Semester 2 concert, performed by UniBand, Jazz Band and the Wind Ensemble. Directed by Jono Palmer with guest conductors Sue Lynn Leong and Athena Shui.        You can purchase tickets here: https://www.eventbrite.co.nz/e/land-city-sea-tickets-1666109290739?aff=oddtdtcreator.",
       imagePath: "events/Land City Sea.png",
       location: "Dorothy Winstone Centre",
       locationUrl: "https://maps.app.goo.gl/GWJ756XwKECdwTCC9",
