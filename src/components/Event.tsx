@@ -58,7 +58,7 @@ const EventTitle = styled.h1`
 
 const EventDetails = styled.p`
   font-size: 1.5rem;
-  font-style: italic;
+  font-variation-settings: "slnt" -10;
 
   a {
     color: var(--foreground) !important;
@@ -120,7 +120,7 @@ const YouTubeEmbedStyle = styled.iframe`
 const Countdown = styled.p`
   font-size: 4rem;
   font-stretch: expanded;
-  font-style: italic;
+  font-variation-settings: "slnt" -10;
   font-weight: 700;
   margin-top: 1rem;
   opacity: 0.4;
