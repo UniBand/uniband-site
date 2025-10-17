@@ -263,16 +263,18 @@ export function EventComponent({
           </YouTubeEmbedContainer>
         )}
 
-        {!isComplete && (
-          <Countdown>
-            in{" "}
-            {Math.ceil(
+        {!isComplete &&
+          (() => {
+            const daysUntil = Math.ceil(
               (new Date(startDate).getTime() - new Date().getTime()) /
                 (1000 * 60 * 60 * 24)
-            )}{" "}
-            days
-          </Countdown>
-        )}
+            );
+            return (
+              <Countdown>
+                in {daysUntil} day{daysUntil !== 1 ? "s" : ""}
+              </Countdown>
+            );
+          })()}
       </EventContents>
     </>
   );
