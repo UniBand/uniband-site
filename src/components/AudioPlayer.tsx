@@ -62,7 +62,7 @@ interface CurrentlyPlayingProps {
 
 const CurrentlyPlaying = styled.p<CurrentlyPlayingProps>`
   font-size: 1.5rem !important;
-  font-style: italic;
+  font-variation-settings: "slnt" -10;
   max-width: calc(100vw - 8rem);
   opacity: ${({ $currentAudio, $isFadingOut }) =>
     $currentAudio && !$isFadingOut ? "0.9" : "0"};

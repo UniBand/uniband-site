@@ -36,7 +36,7 @@ const HorizontalLine = styled.hr`
 
 const EmptyEvents = styled.p`
   font-size: 2rem;
-  font-style: italic;
+  font-variation-settings: "slnt" -10;
   margin-block: 2rem;
   text-align: center;
 `;
