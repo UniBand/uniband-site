@@ -135,8 +135,7 @@ export const UniBandConfig: Config = {
     joinText: [
       "UniBand is open to all students studying in any university, including the **University of Auckland** and **AUT**. No audition required!",
       "As a concert band, we are always looking for musicians playing **woodwind**, **brass**, and **percussion** instruments.",
-      "We rehearse every **Thursday** from **7pm** to **9pm** at the University of Auckland **School of Music** during the university semester.",
-      "Sign ups for 2026 will be open by the end of November. Please check the website for any updates.",
+      "We rehearse every **Thursday** from **7pm** to **9pm** at the University of Auckland **School of Music** during the university semester. Sign ups for 2026 will be open by the end of November. Please check the website for any updates.",
       "If you have any questions, feel free to [contact us](/contact)!",
     ],
   },
