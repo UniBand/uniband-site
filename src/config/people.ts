@@ -8,63 +8,66 @@ import { Director as Director } from "@/components/People";
 
 const executiveCommittee: Person[] = [
   {
-    name: "Bianca Anderson",
+    name: "Kate Le Lievre",
     role: "President",
-    image: "about/people/bianca.jpg",
+    image: "about/people/kate.jpg",
     email: "president@uniband.nz",
   },
   {
-    name: "Kate Le Lievre",
+    name: "Anna Haine",
     role: "Vice President",
-    image: "about/people/kate.jpg",
+    image: "about/people/anna.jpg",
     email: "vicepresident@uniband.nz",
   },
   {
-    name: "Anna Haine",
+    name: "Charlotte Crean",
     role: "Band Manager",
-    image: "about/people/anna.jpg",
+    // image: "about/people/charlotte.jpg",
     email: "bandmanager@uniband.nz",
   },
   {
-    name: "Josiah Grimmer",
+    name: "Bryn Kliskey",
     role: "Treasurer",
-    image: "about/people/josiah.jpg",
+    image: "about/people/bryn.jpg",
     email: "treasurer@uniband.nz",
   },
   {
-    name: "Cameron Burton",
+    name: "Jamie O'Brien",
     role: "Secretary",
-    image: "about/people/cameron.jpg",
+    // image: "about/people/jamie.jpg",
     email: "secretary@uniband.nz",
   },
 ];
 
 const generalCommittee: Person[] = [
-  {
-    name: "Jamie O'Brien",
-    role: "Librarian",
-    email: "info@uniband.nz",
-  },
+  // Roles: Social Media Manager, Marketing, Librarian, Events Manager
   {
     name: "Anthony Wang",
-    role: "Marketing",
+    // role: "Marketing",
     image: "about/people/anthony.jpg",
     email: "info@uniband.nz",
   },
   {
-    name: "Becky Cheng",
-    role: "Social Media Manager",
-    image: "about/people/becky.jpg",
+    name: "Elodie Broad",
+    // role: "",
+    // image: "about/people/elodie.jpg",
     email: "info@uniband.nz",
   },
   {
-    name: "Bryn Kliskey",
-    role: "Events Manager",
-    image: "about/people/bryn.jpg",
+    name: "Hawami Seki Lema",
+    // role: "",
+    // image: "about/people/hawami.jpg",
+    email: "info@uniband.nz",
+  },
+  {
+    name: "Rianna Samant",
+    // role: "",
+    // image: "about/people/rianna.jpg",
     email: "info@uniband.nz",
   },
 ];
 
+// These images aren't cropped but they fit most nicely with a 3:2 horizontal ratio
 const directors: Director[] = [
   {
     person: {
@@ -78,7 +81,7 @@ const directors: Director[] = [
     person: {
       name: "Sue Lynn Leong",
       role: "Assistant Conductor",
-      image: "about/people/jono.jpg",
+      image: "about/people/suelynn.jpg",
     },
     text: "Sue Lynn",
   },
@@ -86,7 +89,7 @@ const directors: Director[] = [
     person: {
       name: "Athena Shiu",
       role: "Assistant Conductor",
-      image: "about/people/jono.jpg",
+      image: "about/people/athena.jpg",
     },
     text: "Athena",
   },
