@@ -73,7 +73,7 @@ const directors: Director[] = [
     person: {
       name: "Michael Jamieson",
       role: "Musical Director",
-      image: "about/people/jono.jpg",
+      // image: "about/people/michael.jpg",
     },
     text: "Michael completed his Bachelors and Honours degrees at Victoria University and Massey University respectively, in Wellington. He was a recipient of the prestigious Patricia Pratt Scholarship, a Massey University Blues Award, and a Creative NZ study grant which enabled him to continue his study at the Messiaen Academy in The Netherlands and the Conservatoire National de Région de Strasbourg in France. As a saxophonist, he works with the Royal NZ Navy Band as well as freelancing as an orchestral and chamber musician with such groups as the NZSO, Auckland Philharmonia, Dutch Radio Chamber Orchestra, Rotterdam Philharmonic, Netherlands Symphony Orchestra, The Royal Concertgebouw Orchestra, the Rata Trio and Hanumi Saxophone Quartet. Michael is a D'Addario Woodwinds and Selmer-Paris Saxophones Performing Artist.",
   },
@@ -81,9 +81,9 @@ const directors: Director[] = [
     person: {
       name: "Sue Lynn Leong",
       role: "Assistant Conductor",
-      image: "about/people/suelynn.jpg",
+      image: "about/people/sue-lynn.jpg",
     },
-    text: "Sue Lynn Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
+    // text: "Sue Lynn Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
   },
   {
     person: {
@@ -91,7 +91,7 @@ const directors: Director[] = [
       role: "Assistant Conductor",
       image: "about/people/athena.jpg",
     },
-    text: "Athena Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
+    // text: "Athena Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
   },
   {
     person: {

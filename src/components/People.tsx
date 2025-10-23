@@ -12,7 +12,7 @@ export interface Person {
 
 export interface Director {
   person: Person;
-  text: string | string[];
+  text?: string | string[];
 }
 
 const PeopleListStyle = styled.div`

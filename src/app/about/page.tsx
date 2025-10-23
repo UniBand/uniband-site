@@ -122,13 +122,16 @@ export default function About() {
             <Director imageOnLeft={idx % 2 === 1} key={director.person.name}>
               <HighlightImage
                 className="director-img"
-                src={director.person.image || logo.src}
+                src={
+                  director.person.image ||
+                  "about/people/director-placeholder.png"
+                }
                 alt={director.person.name}
               />
               <div className="director-info">
                 <h1>{director.person.name}</h1>
                 <h2>{director.person.role}</h2>
-                <ConfigText text={director.text} />
+                {director.text && <ConfigText text={director.text} />}
               </div>
             </Director>
           ))}
