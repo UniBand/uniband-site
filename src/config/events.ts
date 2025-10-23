@@ -8,12 +8,11 @@ import { Event } from "@/components/Event";
 
 export const UniBandEvents: Event[] = [
   // Self-hosted performances
-
   {
     title: "Land, City, Sea",
     startDate: "2025-10-18",
     description:
-      "The 2025 Semester 2 concert, performed by UniBand, Jazz Band and the Wind Ensemble. Directed by Jono Palmer with guest conductors Sue Lynn Leong and Athena Shui.",
+      "The 2025 Semester 2 concert, performed by UniBand, Jazz Band and the Wind Ensemble. Directed by Jono Palmer with guest conductors Sue Lynn Leong and Athena Shiu.",
     imagePath: "events/Land City Sea.png",
     location: "Dorothy Winstone Centre",
     locationUrl: "https://maps.app.goo.gl/GWJ756XwKECdwTCC9",
@@ -33,6 +32,7 @@ export const UniBandEvents: Event[] = [
     imagePath: "events/Fire and Fable.png",
     location: "Dorothy Winstone Centre",
     locationUrl: "https://maps.app.goo.gl/GWJ756XwKECdwTCC9",
+    youtubeCodes: ["i2mKgWlTC4A"],
   },
   {
     title: "Glorious Heights",
@@ -79,7 +79,7 @@ export const UniBandEvents: Event[] = [
     youtubeCodes: ["7uQD_O2jOFg", "e6Xe2XssKSA", "AsXP5PaNwWk"],
   },
   {
-    title: "Midsem Showcase 2023",
+    title: "Mid-Sem Showcase 2023",
     startDate: "2023-05-18",
     description:
       "The 2023 Semester 1 concert, performed by UniBand. Directed by Jono Palmer.",
@@ -101,7 +101,7 @@ export const UniBandEvents: Event[] = [
     startDate: "2022-07-30",
     description:
       "A joint pre-Festival concert, performed by UniBand, AYSB, and AWO. Directed by Jono Palmer.",
-    location: "Presbyterian Church St Lukes",
+    location: "Presbyterian Church St Luke's",
     locationUrl: "https://maps.app.goo.gl/bJXfpysBYAAAJZeK6",
     youtubeCodes: [
       "yze1AbWHAZU",

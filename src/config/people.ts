@@ -83,7 +83,7 @@ const directors: Director[] = [
       role: "Assistant Conductor",
       image: "about/people/suelynn.jpg",
     },
-    text: "Sue Lynn",
+    text: "Sue Lynn Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
   },
   {
     person: {
@@ -91,7 +91,7 @@ const directors: Director[] = [
       role: "Assistant Conductor",
       image: "about/people/athena.jpg",
     },
-    text: "Athena",
+    text: "Athena Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
   },
   {
     person: {
