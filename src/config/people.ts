@@ -1,5 +1,5 @@
 import { Person } from "@/components";
-import { directorProps } from "@/components/People";
+import { Director as Director } from "@/components/People";
 
 // Name is required.  Role, image, and email are optional.
 // Order on the page is determined by the order in the list below.
@@ -65,19 +65,47 @@ const generalCommittee: Person[] = [
   },
 ];
 
-
-const director: directorProps = {
-  person: {
-    name: "Jono Palmer",
-    role: "Musical Director",
-    image: "about/people/jono.jpg",
+const directors: Director[] = [
+  {
+    person: {
+      name: "Michael Jamieson",
+      role: "Musical Director",
+      image: "about/people/jono.jpg",
+    },
+    text: "Michael completed his Bachelors and Honours degrees at Victoria University and Massey University respectively, in Wellington. He was a recipient of the prestigious Patricia Pratt Scholarship, a Massey University Blues Award, and a Creative NZ study grant which enabled him to continue his study at the Messiaen Academy in The Netherlands and the Conservatoire National de Région de Strasbourg in France. As a saxophonist, he works with the Royal NZ Navy Band as well as freelancing as an orchestral and chamber musician with such groups as the NZSO, Auckland Philharmonia, Dutch Radio Chamber Orchestra, Rotterdam Philharmonic, Netherlands Symphony Orchestra, The Royal Concertgebouw Orchestra, the Rata Trio and Hanumi Saxophone Quartet. Michael is a D'Addario Woodwinds and Selmer-Paris Saxophones Performing Artist.",
   },
-  text: "Jono Palmer is a dynamic and enterprising conductor from Auckland, New Zealand. His choirs have won national and international acclaim, including two Gold Medals at the 2015 Grand Prix of Nations in Magdeburg, Germany, and many awards at regional and national festivals of the NZCF Big Sing festival. As a conductor, Jono has been selected for masterclasses at the 2017 World Symposium of Choral Music and the 2017 National Collegiate Choral Organization National Conference. In October 2018, he was a finalist in the inaugural London International Choral Conducting Competition."
-};
+  {
+    person: {
+      name: "Sue Lynn Leong",
+      role: "Assistant Conductor",
+      image: "about/people/jono.jpg",
+    },
+    text: "Sue Lynn",
+  },
+  {
+    person: {
+      name: "Athena Shiu",
+      role: "Assistant Conductor",
+      image: "about/people/jono.jpg",
+    },
+    text: "Athena",
+  },
+  {
+    person: {
+      name: "Jono Palmer",
+      role: "Musical Director", // TODO: update title
+      image: "about/people/jono.jpg",
+    },
+    text: "Jono Palmer is a dynamic and enterprising conductor from Auckland, New Zealand. His choirs have won national and international acclaim, including two Gold Medals at the 2015 Grand Prix of Nations in Magdeburg, Germany, and many awards at regional and national festivals of the NZCF Big Sing festival. As a conductor, Jono has been selected for masterclasses at the 2017 World Symposium of Choral Music and the 2017 National Collegiate Choral Organization National Conference. In October 2018, he was a finalist in the inaugural London International Choral Conducting Competition.",
+  },
+];
 
-
-export const UniBandCommittee: { executiveCommittee: Person[]; generalCommittee: Person[]; director: directorProps } = {
+export const UniBandCommittee: {
+  executiveCommittee: Person[];
+  generalCommittee: Person[];
+  directors: Director[];
+} = {
   executiveCommittee,
   generalCommittee,
-  director,
+  directors,
 };

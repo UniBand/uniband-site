@@ -47,12 +47,12 @@ const People = styled.div`
   justify-content: center;
 `;
 
-const Director = styled.div`
-  padding-inline: var(--body-margins);
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 3fr 2fr;
+const Directors = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   margin-block: 2rem;
+  padding-inline: var(--body-margins);
 
   h1 {
     font-size: 4rem;
@@ -63,15 +63,34 @@ const Director = styled.div`
     font-weight: 400;
     margin-bottom: 1rem;
   }
+`;
+
+const Director = styled.div<{ imageOnLeft: boolean }>`
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: ${({ imageOnLeft }) =>
+    imageOnLeft ? "3fr 2fr" : "2fr 3fr"};
+  grid-template-areas: ${({ imageOnLeft }) =>
+    imageOnLeft ? '"info img"' : '"img info"'};
+
+  & > .director-img {
+    grid-area: img;
+  }
+  & > .director-info {
+    grid-area: info;
+  }
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
     gap: 1rem;
+    grid-template-areas:
+      "img"
+      "info";
   }
 `;
 
 export default function About() {
-  const { executiveCommittee, generalCommittee, director } = UniBandCommittee;
+  const { executiveCommittee, generalCommittee, directors } = UniBandCommittee;
   const aboutImage = UniBandConfig.about.aboutImage;
 
   return (
@@ -98,17 +117,22 @@ export default function About() {
           </Title>
           <PeopleList people={generalCommittee} />
         </People>
-        <Director>
-          <HighlightImage
-            src={director.person.image || logo.src}
-            alt={director.person.name}
-          />
-          <div>
-            <h1>{director.person.name}</h1>
-            <h2>{director.person.role}</h2>
-            <ConfigText text={director.text} />
-          </div>
-        </Director>
+        <Directors>
+          {directors.map((director, idx) => (
+            <Director imageOnLeft={idx % 2 === 1} key={director.person.name}>
+              <HighlightImage
+                className="director-img"
+                src={director.person.image || logo.src}
+                alt={director.person.name}
+              />
+              <div className="director-info">
+                <h1>{director.person.name}</h1>
+                <h2>{director.person.role}</h2>
+                <ConfigText text={director.text} />
+              </div>
+            </Director>
+          ))}
+        </Directors>
       </ContentContainer>
     </>
   );

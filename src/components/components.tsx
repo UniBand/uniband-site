@@ -38,9 +38,10 @@ const fetchImageDimensions = async (imagePath: string) => {
 interface HighlightImageProps {
   src: string;
   alt: string;
+  className?: string;
 }
 
-export function HighlightImage({ src, alt }: HighlightImageProps) {
+export function HighlightImage({ src, alt, className }: HighlightImageProps) {
   const [dimensions, setDimensions] = useState<{
     width: number;
     height: number;
@@ -51,7 +52,7 @@ export function HighlightImage({ src, alt }: HighlightImageProps) {
   }, [src]);
 
   return (
-    <HighlightImageStyle>
+    <HighlightImageStyle className={className}>
       {dimensions ? (
         <Image
           src={prependImageSlash(src)}

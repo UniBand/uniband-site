@@ -10,7 +10,7 @@ export interface Person {
   email?: string;
 }
 
-export interface directorProps {
+export interface Director {
   person: Person;
   text: string | string[];
 }
