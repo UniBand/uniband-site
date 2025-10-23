@@ -84,24 +84,41 @@ export default function Join() {
         <JoinText>
           <ConfigText text={UniBandConfig.join.joinText} />
         </JoinText>
-        <FormBlock>
-          <JoinForm
-            src={`${UniBandConfig.signUpForm}?embedded=true`}
-            title="UniBand Sign-up Form"
-          >
-            Loading…
-          </JoinForm>
-          <a href={UniBandConfig.signUpForm} target="_blank" rel="noreferrer">
-            <JoinFormButton>
-              <OpenInNewRounded />
-            </JoinFormButton>
-          </a>
-        </FormBlock>
-        <MobileFormButton>
-          <a href={UniBandConfig.signUpForm} target="_blank" rel="noreferrer">
-            Sign up here!
-          </a>
-        </MobileFormButton>
+        {UniBandConfig.signUpForm && UniBandConfig.signUpForm != "" ? (
+          <>
+            <FormBlock>
+              <JoinForm
+                src={`${UniBandConfig.signUpForm}?embedded=true`}
+                title="UniBand Sign-up Form"
+              >
+                Loading…
+              </JoinForm>
+              <a
+                href={UniBandConfig.signUpForm}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <JoinFormButton>
+                  <OpenInNewRounded />
+                </JoinFormButton>
+              </a>
+            </FormBlock>
+            <MobileFormButton>
+              <a
+                href={UniBandConfig.signUpForm}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Sign up here!
+              </a>
+            </MobileFormButton>
+          </>
+        ) : (
+          <p>
+            The sign-up form is currently not available. Please contact us for
+            more information.
+          </p>
+        )}
       </ContentContainer>
     </>
   );
