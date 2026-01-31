@@ -95,7 +95,7 @@ export const UniBandConfig: Config = {
     {
       question: "What events does UniBand perform at?",
       answer:
-        "UniBand plays at a range of events throughout the year, including end-of-semester concerts, university events, and the annual NZCBA Concert Band Festival, which is hosted in a different city each year.",
+        "UniBand plays at a range of events throughout the year, including end-of-semester concerts, university events, and the annual NZCBA Concert Band Festival, which is hosted in a different city each year. Our Jazz Band and small ensembles play at the main concerts, and can also organise to play at their own gigs.",
     },
     {
       question: "What instruments are we currently looking for?",
@@ -108,10 +108,9 @@ export const UniBandConfig: Config = {
         "A euphonium, tuba, baritone saxophone, bass clarinet, and bassoon.",
     },
     {
-      question:
-        "Are there opportunities for high school students to see or join UniBand?",
+      question: "What other groups are there available to join?",
       answer:
-        "If you’re a high school student interested in exploring musical groups at university, you are very welcome to come visit and even join some of our rehearsals at the start of each semester. Our first rehearsal of each semester is always in week 1, check our social media for more details.",
+        "We have a Jazz Band, Percussion Ensemble, Clarinet Ensemble, and Saxophone Ensemble. Watch this space for more! If you’re interested, please get into contact with us for more information about each particular group.
     },
     {
       question: "What is UniBand all about?",
