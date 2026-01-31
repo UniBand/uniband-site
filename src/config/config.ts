@@ -110,7 +110,7 @@ export const UniBandConfig: Config = {
     {
       question: "What other groups are there available to join?",
       answer:
-        "We have a Jazz Band, Percussion Ensemble, Clarinet Ensemble, and Saxophone Ensemble. Watch this space for more! If you’re interested, please get into contact with us for more information about each particular group.
+        "We have a Jazz Band, Percussion Ensemble, Clarinet Ensemble, and Saxophone Ensemble. Watch this space for more! If you’re interested, please get into contact with us for more information about each particular group.",
     },
     {
       question: "What is UniBand all about?",
