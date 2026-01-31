@@ -2,5 +2,17 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
-  "cSpell.words": ["nzcba"]
+  "cSpell.words": [
+    "AUSC",
+    "AYSB",
+    "Givealittle",
+    "Jaffrey",
+    "Jamieson",
+    "Jono",
+    "Leong",
+    "nzcba",
+    "Shiu",
+    "Uatahausi",
+    "Winstone"
+  ]
 }

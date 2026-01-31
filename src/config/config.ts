@@ -5,7 +5,7 @@ interface Config {
   instagram: string;
   facebook: string;
   givealittle: string;
-  signUpForm: string;
+  signUpForm: string | null;
 
   home: {
     subtitle: string;
@@ -52,8 +52,8 @@ export const UniBandConfig: Config = {
   givealittle: "https://givealittle.co.nz/org/uniband",
 
   // Try to keep in the format of "https://docs.google.com/forms/d/e/FORM_ID/viewform". I don't know if it'll work with other URL formats.
-  signUpForm: 
-  
+  signUpForm: "https://docs.google.com/forms/d/e/1FAIpQLSfsFTFsVv8HmIApNLmYWbRDHCgZFHJRwEpcTb8ERBl-vpVyqg/viewform",
+
   // For multi-line text, use an array of strings, like so: ["Line 1", "Line 2"]
   // Any of the variables set above can be referenced in text like "Email us at ${email}!"
   // Wrap text in ** for bold like "This is **bold** text."
