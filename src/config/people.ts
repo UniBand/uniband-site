@@ -73,15 +73,14 @@ const directors: Director[] = [
     person: {
       name: "Michael Jamieson",
       role: "Musical Director",
-      // image: "about/people/michael.jpg",
-    },
+     },image: "about/people/Michael.jpg"
     text: "Michael completed his Bachelors and Honours degrees at Victoria University and Massey University respectively, in Wellington. He was a recipient of the prestigious Patricia Pratt Scholarship, a Massey University Blues Award, and a Creative NZ study grant which enabled him to continue his study at the Messiaen Academy in The Netherlands and the Conservatoire National de Région de Strasbourg in France. As a saxophonist, he works with the Royal NZ Navy Band as well as freelancing as an orchestral and chamber musician with such groups as the NZSO, Auckland Philharmonia, Dutch Radio Chamber Orchestra, Rotterdam Philharmonic, Netherlands Symphony Orchestra, The Royal Concertgebouw Orchestra, the Rata Trio and Hanumi Saxophone Quartet. Michael is a D'Addario Woodwinds and Selmer-Paris Saxophones Performing Artist.",
   },
   {
     person: {
       name: "Sue Lynn Leong",
       role: "Assistant Conductor",
-      image: "about/people/sue-lynn.jpg",
+      image: "about/people/Sue-Lynn.jpg",
     },
     // text: "Sue Lynn Leong is a local conductor, teacher and bassoonist. She completed a Bachelor of Music (Honours), specialising in conducting, music education and classical bassoon performance and is currently working towards a Graduate Diploma in Teaching (Secondary). Sue Lynn is currently the Music Director of the Symphonic and Cadet Bands at Eastern Stars, an organisation that focuses on community music-making and music education for all. She is also a collaborative pianist and itinerant teacher (bassoon and piano) in local schools. As a performer, Sue Lynn is the principal bassoon of the NZSO National Youth Orchestra and Auckland Youth Orchestra, and a regular freelancer who has performed with ensembles including the Auckland Philharmonia, Opus Orchestra, and the OCT Ensemble.",
   },
@@ -89,7 +88,7 @@ const directors: Director[] = [
     person: {
       name: "Athena Shiu",
       role: "Assistant Conductor",
-      image: "about/people/athena.jpg",
+      image: "about/people/Athenajpg",
     },
     // text: "Athena is an active conductor, trombonist, and educator based in Tāmaki Makaurau. She holds a Bachelor of Music in Classical Trombone Performance from the University of Auckland, and has performed with ensembles including Bach Musica, Opus Orchestra, the NZSO National Youth Orchestra, and Auckland Youth Orchestra."
  
