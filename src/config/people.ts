@@ -83,7 +83,7 @@ const directors: Director[] = [
       role: "Assistant Conductor",
       image: "about/people/sue-lynn.jpg",
     },
-    // text: "Sue Lynn Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
+    // text: "Sue Lynn Leong is a local conductor, teacher and bassoonist. She completed a Bachelor of Music (Honours), specialising in conducting, music education and classical bassoon performance and is currently working towards a Graduate Diploma in Teaching (Secondary). Sue Lynn is currently the Music Director of the Symphonic and Cadet Bands at Eastern Stars, an organisation that focuses on community music-making and music education for all. She is also a collaborative pianist and itinerant teacher (bassoon and piano) in local schools. As a performer, Sue Lynn is the principal bassoon of the NZSO National Youth Orchestra and Auckland Youth Orchestra, and a regular freelancer who has performed with ensembles including the Auckland Philharmonia, Opus Orchestra, and the OCT Ensemble.",
   },
   {
     person: {
@@ -91,7 +91,9 @@ const directors: Director[] = [
       role: "Assistant Conductor",
       image: "about/people/athena.jpg",
     },
-    // text: "Athena Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lorem sapien, interdum sit amet convallis eget, dignissim ut diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ultricies ac urna ac hendrerit. Mauris scelerisque turpis vel blandit accumsan. Sed ornare pharetra velit ac rutrum. Sed non facilisis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur vitae mauris eget varius. Donec bibendum rutrum orci, eget tempus nisi varius in. Cras vitae risus consequat lacus rutrum malesuada ut at est. Praesent eu eros non massa venenatis malesuada at quis erat. Vivamus id tortor non ligula semper feugiat pulvinar et tortor. Fusce nec mauris at dui fermentum tristique vel ac dolor. Fusce blandit est in diam ornare cursus. Nunc dapibus augue vel posuere sodales. Phasellus sit amet commodo tellus.",
+    // text: "Athena is an active conductor, trombonist, and educator based in Tāmaki Makaurau. She holds a Bachelor of Music in Classical Trombone Performance from the University of Auckland, and has performed with ensembles including Bach Musica, Opus Orchestra, the NZSO National Youth Orchestra, and Auckland Youth Orchestra."
+ 
+
   },
   {
     person: {
