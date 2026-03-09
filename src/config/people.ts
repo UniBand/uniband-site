@@ -73,7 +73,8 @@ const directors: Director[] = [
     person: {
       name: "Michael Jamieson",
       role: "Musical Director",
-     },image: "about/people/Michael.jpg"
+     image: "about/people/Michael.jpg"
+    },
     text: "Michael completed his Bachelors and Honours degrees at Victoria University and Massey University respectively, in Wellington. He was a recipient of the prestigious Patricia Pratt Scholarship, a Massey University Blues Award, and a Creative NZ study grant which enabled him to continue his study at the Messiaen Academy in The Netherlands and the Conservatoire National de Région de Strasbourg in France. As a saxophonist, he works with the Royal NZ Navy Band as well as freelancing as an orchestral and chamber musician with such groups as the NZSO, Auckland Philharmonia, Dutch Radio Chamber Orchestra, Rotterdam Philharmonic, Netherlands Symphony Orchestra, The Royal Concertgebouw Orchestra, the Rata Trio and Hanumi Saxophone Quartet. Michael is a D'Addario Woodwinds and Selmer-Paris Saxophones Performing Artist.",
   },
   {
