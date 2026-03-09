@@ -55,9 +55,7 @@ const generalCommittee: Person[] = [
   },
   {
     name: "Hawami Seki Lema",
-    // role: "",
-    // image: "about/people/hawami.jpg",
-    email: "info@uniband.nz",
+    image: "about/people/Hawami.jpg",
   },
   {
     name: "Rianna Samant",
