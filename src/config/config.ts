@@ -105,7 +105,7 @@ export const UniBandConfig: Config = {
     {
       question: "What instruments does UniBand have for hire?",
       answer:
-        "A euphonium, tuba, baritone saxophone, bass clarinet, and bassoon.",
+        "A euphonium, tuba, oboe, baritone saxophone, bass clarinet, and bassoon.",
     },
     {
       question: "What other groups are there available to join?",
@@ -125,7 +125,7 @@ export const UniBandConfig: Config = {
   ],
   contact: {
     contactText: [
-      "You can contact us by sending an email to **${email}**.",
+      "You can contact us by sending an email to **${secretary.uniband.nz}**.",
       "You can also find us at the **School of Music** in the University of Auckland (6 Symonds Street, Auckland 1010).",
       "Follow us on [Instagram](${instagram}), [Facebook](${facebook}), and [YouTube](https://www.youtube.com/channel/${youTubeChannelId})!",
     ],
