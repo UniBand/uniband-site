@@ -3,8 +3,8 @@ import { UniBandText } from "./components";
 import { ElementType } from "react";
 
 function getVariable(key: string): JSX.Element | string | undefined {
-  if (key === "email") {
-    const email = UniBandConfig.email;
+  if (key === "email" || key === "secretaryEmail") {
+    const email = UniBandConfig[key];
     return <a href={`mailto:${email}`}>{email}</a>;
   }
   const variable = UniBandConfig[key as keyof typeof UniBandConfig];
@@ -44,7 +44,7 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
           rel={isExternal ? "noreferrer" : undefined}
         >
           {parseTextToElements(linkText)}
-        </a>
+        </a>,
       );
     } else if (match === "UniBand") {
       elements.push(<UniBandText key={offset} />);
