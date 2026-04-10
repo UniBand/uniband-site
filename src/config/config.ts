@@ -1,6 +1,7 @@
 interface Config {
   galleryPath: string;
   email: string;
+  secretaryEmail: string;
   youTubeChannelId: string;
   instagram: string;
   facebook: string;
@@ -28,6 +29,23 @@ interface Config {
   join: {
     joinText: string[];
   };
+
+  updates: {
+    instrumentHireUpdates: InstrumentHireUpdate[];
+    generalEnsembleUpdates: EnsembleUpdate[];
+  };
+}
+
+export interface InstrumentHireUpdate {
+  instrument: string;
+  status: string | string[];
+  otherInfo?: string | string[];
+}
+
+export interface EnsembleUpdate {
+  ensemble: string;
+  statusLines: string | string[];
+  otherInfoLines: string | string[];
 }
 
 export interface Question {
@@ -46,13 +64,15 @@ export const UniBandConfig: Config = {
   galleryPath: "gallery",
 
   email: "info@uniband.nz",
+  secretaryEmail: "secretary@uniband.nz",
   youTubeChannelId: "UCy_Eez7ZamDM31jOTRvqrWw", // Just the ID
   instagram: "https://www.instagram.com/uoa_uniband",
   facebook: "https://www.facebook.com/UniBandNZ",
   givealittle: "https://givealittle.co.nz/org/uniband",
 
   // Try to keep in the format of "https://docs.google.com/forms/d/e/FORM_ID/viewform". I don't know if it'll work with other URL formats.
-  signUpForm: "https://docs.google.com/forms/d/e/1FAIpQLSfsFTFsVv8HmIApNLmYWbRDHCgZFHJRwEpcTb8ERBl-vpVyqg/viewform",
+  signUpForm:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfsFTFsVv8HmIApNLmYWbRDHCgZFHJRwEpcTb8ERBl-vpVyqg/viewform",
 
   // For multi-line text, use an array of strings, like so: ["Line 1", "Line 2"]
   // Any of the variables set above can be referenced in text like "Email us at ${email}!"
@@ -125,7 +145,7 @@ export const UniBandConfig: Config = {
   ],
   contact: {
     contactText: [
-      "You can contact us by sending an email to **secretary@uniband.nz**.",
+      "You can contact us by sending an email to **${secretaryEmail}**.",
       "You can also find us at the **School of Music** in the University of Auckland (6 Symonds Street, Auckland 1010).",
       "Follow us on [Instagram](${instagram}), [Facebook](${facebook}), and [YouTube](https://www.youtube.com/channel/${youTubeChannelId})!",
     ],
@@ -136,6 +156,76 @@ export const UniBandConfig: Config = {
       "As a concert band, we are always looking for musicians playing **woodwind**, **brass**, and **percussion** instruments.",
       "We rehearse every **Thursday** from **7pm** to **9pm** at the University of Auckland **School of Music** during the university semester. Sign ups for 2026 will be open by the end of November. Please check the website for any updates.",
       "If you have any questions, feel free to [contact us](/contact)!",
+    ],
+  },
+  updates: {
+    instrumentHireUpdates: [
+      {
+        instrument: "Piccolo",
+        status: "Unavailable",
+        otherInfo: "",
+      },
+      {
+        instrument: "Baritone Saxophone",
+        status: "Unavailable",
+        otherInfo: "Will next be hireable from the beginning of April.",
+      },
+      {
+        instrument: "Bass Clarinet",
+        status: "Unavailable",
+        otherInfo: "",
+      },
+      {
+        instrument: "Tuba",
+        status: "Available",
+        otherInfo: "",
+      },
+      {
+        instrument: "Euphonium",
+        status: "Available",
+        otherInfo: "",
+      },
+      {
+        instrument: "Oboe",
+        status: "Available",
+        otherInfo: "",
+      },
+    ],
+    generalEnsembleUpdates: [
+      {
+        ensemble: "Concert Band",
+        statusLines: [
+          "The open rehearsal period has ended.",
+          "Please email ${secretaryEmail} to inquire about joining.",
+        ],
+        otherInfoLines: [
+          "No auditions.",
+          "Video submission required (via expression of interest form) for potential solo parts or need for first chair positions.",
+        ],
+      },
+      {
+        ensemble: "Jazz Band",
+        statusLines: [
+          "The open rehearsal period has ended.",
+          "Please email ${secretaryEmail} to inquire about joining.",
+        ],
+        otherInfoLines: ["No auditions.", "Rhythm section is full."],
+      },
+      {
+        ensemble: "Reed Quintet",
+        statusLines: ["Closed"],
+        otherInfoLines: [],
+      },
+      {
+        ensemble: "Clarinet Ensemble",
+        statusLines: ["Email ${secretaryEmail} for more info."],
+        otherInfoLines: [],
+      },
+      {
+        ensemble: "Percussion Ensemble",
+        statusLines: ["Email ${secretaryEmail} for more info."],
+        otherInfoLines: [],
+      },
     ],
   },
 };

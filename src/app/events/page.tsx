@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { SpacedTitle, Title } from "@/components/atomic";
 import { BodyContent } from "@/components/components";
 import {
@@ -45,14 +46,10 @@ function EventsList({ events }: { events: Event[] }) {
   return (
     <EventsContainer>
       {events.map((event, index) => (
-        <>
-          <EventComponent
-            key={event.title}
-            {...event}
-            imageFirst={index % 2 === 0}
-          />
+        <Fragment key={`${event.title}-${event.startDate}-${index}`}>
+          <EventComponent {...event} imageFirst={index % 2 === 0} />
           {index !== events.length - 1 && <HorizontalLine />}
-        </>
+        </Fragment>
       ))}
     </EventsContainer>
   );
@@ -66,10 +63,10 @@ export default function Events() {
   const currentDate = new Date();
 
   const currentEvents = events.filter(
-    (event) => new Date(event.startDate) >= currentDate
+    (event) => new Date(event.startDate) >= currentDate,
   );
   const pastEvents = events.filter(
-    (event) => new Date(event.startDate) < currentDate
+    (event) => new Date(event.startDate) < currentDate,
   );
 
   return (
