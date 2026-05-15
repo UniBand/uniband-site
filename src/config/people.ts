@@ -39,7 +39,7 @@ const executiveCommittee: Person[] = [
   },
 ];
 
-const generalCommittee: Person[] = [
+ generalCommittee: Person[] = [
   // Roles: Social Media Manager, Marketing, Librarian, Events Manager
   {
     name: "Anthony Wang",
