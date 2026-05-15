@@ -8,6 +8,23 @@ import { Event } from "@/components/Event";
 
 export const UniBandEvents: Event[] = [
   // Self-hosted performances
+
+  
+    title: "Beyond Horizons",
+    startDate: "2026-05-30",
+    description:
+      "The 2026 Semester 1 concert, performed by UniBand, Jazz Band and the Wind Ensemble. Directed by Michael Jamieson.",  
+    imagePath: "events/Beyond Horizons .png",
+    location: "Dorothy Winstone Centre",
+    locationUrl: "https://maps.app.goo.gl/GWJ756XwKECdwTCC9",
+    urls: [
+      {
+        name: "Book tickets",
+        url: "https://www.eventbrite.co.nz/e/beyond-horizons-tickets-1988962132279?aff=oddtdtcreator",
+        hideWhenComplete: true,
+      },
+    ],
+  },
   {
     title: "Land, City, Sea",
     startDate: "2025-10-18",
