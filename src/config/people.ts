@@ -44,7 +44,7 @@ const generalCommittee: Person[] = [
   {
     name: "Anthony Wang",
     // role: "Marketing",
-    image: "about/people/anthony.jpg",
+    image: 
     email: "info@uniband.nz",
   },
   {
