@@ -43,7 +43,7 @@ const generalCommittee: Person[] = [
   // Roles: Social Media Manager, Marketing, Librarian, Events Manager
   {
     name: "Anthony Wang",
-    role: "Marketing and Promotions",
+    role: "Marketing",
     image: 
     email: "info@uniband.nz",
   },
