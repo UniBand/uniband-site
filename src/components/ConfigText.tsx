@@ -2,10 +2,17 @@ import { UniBandConfig } from "@/config";
 import { UniBandText } from "./components";
 import { ElementType } from "react";
 
-function getVariable(key: string): JSX.Element | string | undefined {
-  if (key === "email") {
-    const email = UniBandConfig.email;
-    return <a href={`mailto:${email}`}>{email}</a>;
+function getVariable(
+  key: string,
+  elementKey?: string | number,
+): JSX.Element | string | undefined {
+  if (key === "email" || key === "secretaryEmail") {
+    const email = UniBandConfig[key];
+    return (
+      <a key={elementKey} href={`mailto:${email}`}>
+        {email}
+      </a>
+    );
   }
   const variable = UniBandConfig[key as keyof typeof UniBandConfig];
   if (variable && typeof variable === "string") {
@@ -30,7 +37,7 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
     addTextSegment(offset, offset + match.length);
 
     if (variableKey) {
-      const variableElement = getVariable(variableKey);
+      const variableElement = getVariable(variableKey, offset);
       elements.push(variableElement ?? variableKey);
     } else if (boldText) {
       elements.push(<b key={offset}>{parseTextToElements(boldText)}</b>);
@@ -44,7 +51,7 @@ function parseTextToElements(text: string): (string | JSX.Element)[] {
           rel={isExternal ? "noreferrer" : undefined}
         >
           {parseTextToElements(linkText)}
-        </a>
+        </a>,
       );
     } else if (match === "UniBand") {
       elements.push(<UniBandText key={offset} />);

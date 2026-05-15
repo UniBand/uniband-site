@@ -65,13 +65,13 @@ const Directors = styled.div`
   }
 `;
 
-const Director = styled.div<{ imageOnLeft: boolean }>`
+const Director = styled.div<{ $imageOnLeft: boolean }>`
   display: grid;
   gap: 2rem;
-  grid-template-columns: ${({ imageOnLeft }) =>
-    imageOnLeft ? "3fr 2fr" : "2fr 3fr"};
-  grid-template-areas: ${({ imageOnLeft }) =>
-    imageOnLeft ? '"info img"' : '"img info"'};
+  grid-template-columns: ${({ $imageOnLeft }) =>
+    $imageOnLeft ? "3fr 2fr" : "2fr 3fr"};
+  grid-template-areas: ${({ $imageOnLeft }) =>
+    $imageOnLeft ? '"info img"' : '"img info"'};
 
   & > .director-img {
     grid-area: img;
@@ -119,7 +119,7 @@ export default function About() {
         </People>
         <Directors>
           {directors.map((director, idx) => (
-            <Director imageOnLeft={idx % 2 === 1} key={director.person.name}>
+            <Director $imageOnLeft={idx % 2 === 1} key={director.person.name}>
               <HighlightImage
                 className="director-img"
                 src={
