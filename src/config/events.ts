@@ -9,7 +9,7 @@ import { Event } from "@/components/Event";
 export const UniBandEvents: Event[] = [
   // Self-hosted performances
 
-  
+  {
     title: "Beyond Horizons",
     startDate: "2026-05-30",
     description:
