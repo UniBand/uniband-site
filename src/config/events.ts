@@ -10,6 +10,23 @@ export const UniBandEvents: Event[] = [
   // Self-hosted performances
 
   {
+    title: "Small Ensembles",
+    startDate: "2026-05-20",
+    description:
+      "UniBand Inc. is excited to bring to you our first annual Small Ensembles Concert! Featured is the Jazz Band conducted by Athena Shiu, the Saxophone Quartet, Reed Quintet, and Clarinet Ensemble.",
+
+    imagePath: "events/Small Ensembles .png",
+    location: "University of Auckland, School of Music Theatre",
+    locationUrl: "https://maps.app.goo.gl/GWJ756XwKECdwTCC9",
+    urls: [
+      {
+        name: "Book tickets",
+        url: "https://www.eventbrite.co.nz/e/small-ensembles-concert-tickets-1989348408642?aff=oddtdtcreator",
+        hideWhenComplete: true,
+      },
+    ],
+  },
+  {
     title: "Beyond Horizons",
     startDate: "2026-05-30",
     description:
